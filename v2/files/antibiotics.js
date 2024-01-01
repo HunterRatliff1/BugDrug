@@ -261,7 +261,7 @@ const ANTIBIOTICS = {
      * ETP Ertapenem
     ***/
     'MEM': {
-        name: 'Meroppenem',
+        name: 'Meropenem',
         fullName: 'Mero/Dori/Imipenem',
         abxClass: 'carbapenems',
         bugs: {
