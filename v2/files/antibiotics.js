@@ -20,7 +20,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -38,7 +38,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -56,7 +56,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -74,7 +74,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -92,7 +92,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -118,7 +118,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -136,7 +136,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -154,7 +154,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -172,7 +172,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -190,7 +190,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -215,7 +215,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -233,7 +233,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -251,7 +251,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -274,7 +274,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -292,7 +292,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -315,7 +315,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -333,7 +333,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -351,7 +351,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -373,7 +373,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -391,7 +391,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     },
@@ -413,7 +413,7 @@ const ANTIBIOTICS = {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', EDA:'', 
+            Meningitis:'', SA:'', 
             Oral:''},
         comments: 'comment goes here'
     }
