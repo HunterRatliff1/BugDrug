@@ -200,18 +200,28 @@ const SYNDROMES = {
     },
     'Meningitis': {
         name: 'Meningitis',
-        fullName: 'Meningitis (community acquired)',
+        fullName: 'Bacterial meningitis (community acquired)',
         bugs: {
             GNR:'', PsA:'', AmpC:'', 
-            ESBL:'', CRE:'', Others:'', 
+            ESBL:'', CRE:'', Others:'unk', 
             MSSA:'', MRSA:'', SOSA:'', 
-            Strep:'', VRE:'', VSE:'',
+            Strep:'com', VRE:'', VSE:'',
             anaerobes:'', PNA:'', Zoo:''},
-        comments: ''
+        comments: "This covers <b class='text-danger'><u>immunocompetent</u></b> " +
+        "<b class='text-info'>adults</b> with acute <b>bacterial</b> meningitis. " +
+        'Meningitis does not fit well into the "bacteria" schema ' + "I've " +
+        "developed, so please read this text. " +
+        "<br><br>" +
+        "The two most common pathogens <i>Strep. pneumoniae</i> and <i>Neisseria " +
+        "meningitidis</i>. The combo of ceftriaxone and vancomycin cover these " +
+        "two bacteria (vanco is needed for resistant strains of S. pneumoniae). " + 
+        "<i>Listeria monocytogenes</i> should be considered in immunocompromised " +
+        "patients, pregnancy, and older adults (add ampicillin). <b>Dexamethasone</b> " +
+        "should be given 15-20 minutes <b>before the first dose of antibiotics</b>."
     },
-    'EDA': {
-        name: 'SA / EDA',
-        fullName: 'Septic arthritis or epidural abscess',
+    'SA': {
+        name: 'SA',
+        fullName: 'Septic arthritis',
         bugs: {
             GNR:'', PsA:'', AmpC:'', 
             ESBL:'', CRE:'', Others:'', 
