@@ -223,23 +223,14 @@ const SYNDROMES = {
         name: 'SA',
         fullName: 'Septic arthritis',
         bugs: {
-            GNR:'', PsA:'', AmpC:'', 
+            GNR:'com', PsA:'occ', AmpC:'', 
             ESBL:'', CRE:'', Others:'', 
-            MSSA:'', MRSA:'', SOSA:'', 
-            Strep:'', VRE:'', VSE:'',
+            MSSA:'com', MRSA:'com', SOSA:'', 
+            Strep:'com', VRE:'', VSE:'',
             anaerobes:'', PNA:'', Zoo:''},
-        comments: ''
-    },
-    'Oral': {
-        name: 'Oral flora',
-        fullName: 'Oral flora',
-        bugs: {
-            GNR:'', PsA:'', AmpC:'', 
-            ESBL:'', CRE:'', Others:'', 
-            MSSA:'', MRSA:'', SOSA:'', 
-            Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
-        comments: ''
+        comments: 'Most common pathogens are Staph aureus, Streptococcus sp., ' +
+        "and gram negative rods. If sexually active, consider <i>Neisseria " +
+        "gonorrhoeae</i>"
     }
     
 };
