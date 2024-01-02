@@ -61,7 +61,7 @@ const SYNDROMES = {
         name: 'CAP',
         fullName: 'Community acquired pneumonia',
         bugs: {
-            GNR:'com', PsA:'', AmpC:'com', 
+            GNR:'com', PsA:'', AmpC:'occ', 
             ESBL:'', CRE:'', Others:'', 
             MSSA:'occ', MRSA:'occ', SOSA:'', 
             Strep:'com', VRE:'', VSE:'',
@@ -157,8 +157,8 @@ const SYNDROMES = {
         bugs: {
             GNR:'com', PsA:'occ', AmpC:'', 
             ESBL:'occ', CRE:'', Others:'', 
-            MSSA:'com', MRSA:'com', SOSA:'', 
-            Strep:'com', VRE:'occ', VSE:'com',
+            MSSA:'occ', MRSA:'occ', SOSA:'', 
+            Strep:'occ', VRE:'occ', VSE:'com',
             anaerobes:'com', PNA:'', Zoo:''},
         comments: 'Clinical scenerios include secondary peritonitis (bowel ' +
         "perforation, ischemic bowel, intraabdominal abscess), diverticulitis, " +
@@ -177,7 +177,7 @@ const SYNDROMES = {
             GNR:'com', PsA:'', AmpC:'', 
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
-            Strep:'', VRE:'com', VSE:'com',
+            Strep:'', VRE:'occ', VSE:'com',
             anaerobes:'com', PNA:'', Zoo:''},
         comments: 'Most common bacteria are enterobacteriaceae (gram negative rods) ' +
         "enterococcus, and anaerobes (Clostridium and Bacteroides spp). For many " +

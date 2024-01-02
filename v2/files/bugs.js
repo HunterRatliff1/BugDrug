@@ -4,31 +4,39 @@ const BACTERIA = {
         fullName: 'Enterobacterales (gram negative rods)',
         bugClass: 'GN',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Empiric:'com', UTI:'com', CAP:'com', HAP:'com', 
+            SSTI:'', Foot:'occ', Osteo:'com', 
+            IAI:'com', Hepatobiliary:'com', SBP:'com', 
+            Meningitis:'', SA:'com'
+        },
+        abx: {
+            AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+            CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+            VAN:'', LZD:'', DAP:'',
+            MEM:'', ETP:'', 
+            DOX:'', MIN:'', TGC:'',
+            MTZ:'', CLI:''
+        },
         comments: ''
     },
     'PsA': {
         name: 'Pseudomonas',
-        fullName: '',
+        fullName: 'Pseudomonas',
         bugClass: 'GN',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['Cefepime', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Empiric:'com', UTI:'com', CAP:'', HAP:'com', 
+            SSTI:'', Foot:'occ', Osteo:'com', 
+            IAI:'occ', Hepatobiliary:'', SBP:'', 
+            Meningitis:'', SA:'occ'
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'good', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'AmpC': {
@@ -36,15 +44,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GN',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
+            Empiric:'com', UTI:'com', CAP:'occ', HAP:'com', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Meningitis:'', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'ESBL': {
@@ -52,15 +64,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GN',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
+            Empiric:'occ', UTI:'occ', CAP:'', HAP:'occ', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Meningitis:'', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'CRE': {
@@ -68,15 +84,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GN',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
+            Empiric:'', UTI:'occ', CAP:'', HAP:'occ', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Meningitis:'', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'Others': {
@@ -84,15 +104,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GN',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
+            Empiric:'', UTI:'', CAP:'', HAP:'occ', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Meningitis:'unk', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },     
     'MSSA': {
@@ -100,15 +124,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GP',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Empiric:'com', UTI:'', CAP:'occ', HAP:'com', 
+            SSTI:'com', Foot:'com', Osteo:'com', 
+            IAI:'occ', Hepatobiliary:'', SBP:'', 
+            Meningitis:'', SA:'com'
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'MRSA': {
@@ -116,15 +144,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GP',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['Vanc', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Empiric:'com', UTI:'', CAP:'occ', HAP:'com', 
+            SSTI:'com', Foot:'com', Osteo:'com', 
+            IAI:'occ', Hepatobiliary:'', SBP:'', 
+            Meningitis:'', SA:'com'
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'SOSA': {
@@ -132,15 +164,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GP',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Empiric:'', UTI:'unk', CAP:'', HAP:'', 
+            SSTI:'unk', Foot:'unk', Osteo:'occ', 
+            IAI:'', Hepatobiliary:'', SBP:'occ', 
+            Meningitis:'', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },  
     'Strep': {
@@ -148,15 +184,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GP',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Empiric:'com', UTI:'', CAP:'com', HAP:'com', 
+            SSTI:'com', Foot:'com', Osteo:'com', 
+            IAI:'occ', Hepatobiliary:'', SBP:'com', 
+            Meningitis:'com', SA:'com'
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },  
     'VSE': {
@@ -164,15 +204,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GP',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
+            Empiric:'occ', UTI:'occ', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            IAI:'com', Hepatobiliary:'com', SBP:'occ', 
+            Meningitis:'', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'VRE': {
@@ -180,15 +224,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'GP',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
+            Empiric:'', UTI:'occ', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            IAI:'occ', Hepatobiliary:'occ', SBP:'', 
+            Meningitis:'', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'anaerobes': {
@@ -196,15 +244,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'ana',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Empiric:'occ', UTI:'', CAP:'', HAP:'', 
+            SSTI:'occ', Foot:'occ', Osteo:'occ', 
+            IAI:'com', Hepatobiliary:'com', SBP:'', 
+            Meningitis:'', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'PNA': {
@@ -212,15 +264,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'atyp',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
+            Empiric:'', UTI:'', CAP:'com', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Meningitis:'', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     },
     'Zoo': {
@@ -228,15 +284,19 @@ const BACTERIA = {
         fullName: '',
         bugClass: 'atyp',
         synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'', 
+            Empiric:'occ', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
-        abxMain: ['', '', '', '', ''],
-        abxRare: [],
-        synMain: [],
-        synRare: [],
+            Meningitis:'', SA:''
+        },
+        abx: {
+                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
+                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
+                VAN:'', LZD:'', DAP:'',
+                MEM:'', ETP:'', 
+                DOX:'good', MIN:'', TGC:'',
+                MTZ:'', CLI:''
+            },
         comments: ''
     }
 };

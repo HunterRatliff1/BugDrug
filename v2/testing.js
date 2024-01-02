@@ -59,7 +59,7 @@ const clearHighlights = function (cls="active") {
          to blank
 */
 const mainHighlight = function(listOfID, title="", text="", subtitle="") {
-    clearHighlights(); // remove old highlights
+    //clearHighlights(); // remove old highlights
 
     Object.keys(listOfID).forEach(function(key){
         var id = '#' + key;
@@ -72,27 +72,6 @@ const mainHighlight = function(listOfID, title="", text="", subtitle="") {
     $( "#box-subtitle" ).html(subtitle);
     $( "#box-text" ).html(text);
 };
-/*
-// Set the value of the text box
-const setBoxText = function(title, text, subtitle="") {
-    clearHighlights(); // remove old text
-
-    $( "#box-title" ).html(title);
-    $( "#box-subtitle" ).html(subtitle);
-    $( "#box-text" ).html(text);
-};
-
-
-// Given an array of IDs, add a class
-const mainHighlight = function(ids, cls="active") {
-    clearHighlights(); // remove old highlights
-
-    ids.forEach(function (i) {
-        var id = '#' + i;
-        $(id).addClass(cls);
-    });
-};
-*/
 
 $( document ).ready(function() {
     // For the bag table, add classes to the parts of the SVG
@@ -101,7 +80,7 @@ $( document ).ready(function() {
         $( this ).addClass( "toggleable" );
     });
 
-    // For each syndrome listed in the SYNDROMES object
+    /*** For each syndrome listed in the SYNDROMES object ***/
     Object.keys(SYNDROMES).forEach(function(syn) {
         var syndrome = SYNDROMES[syn];
 
@@ -112,12 +91,12 @@ $( document ).ready(function() {
         $( '#' + syn).addClass( "toggleable" );
         $( '#' + syn).addClass( "list-group-item" );
 
-        // Highlight the .....
+        // When you hover over the **syndrome**, highlight the **bug**
         $( '#'+syn).on( "mouseenter", function(){mainHighlight(syndrome.bugs, syndrome.fullName, syndrome.comments)} );
         $( '#'+syn).on( "mouseleave", function(){clearHighlights()} );
     });
 
-    // For each antibiotic listed in the ANTIBIOTICS object
+    /*** For each antibiotic listed in the ANTIBIOTICS object ***/
     Object.keys(ANTIBIOTICS).forEach(function(abx) {
         var antibiotic = ANTIBIOTICS[abx];
 
@@ -128,19 +107,22 @@ $( document ).ready(function() {
         $( '#' + abx).addClass( "toggleable" );
         $( '#' + abx).addClass( "list-group-item" );
 
-        // Highlight the .....
-        $( '#'+abx).on( "mouseenter", function(){mainHighlight(antibiotic.bugs)} );
+        // When you hover over the **antibiotic**, highlight the **bug**
+        $( '#'+abx).on( "mouseenter", function(){mainHighlight(antibiotic.bugs, antibiotic.fullName, antibiotic.comments)} );
         $( '#'+abx).on( "mouseleave", function(){clearHighlights()} );
     });
 
-    // For each bug listed in the BACTERIA object
+    /*** For each bug listed in the BACTERIA object ***/
     Object.keys(BACTERIA).forEach(function(bug) {
         var bacteria = BACTERIA[bug];
         $( '#' + bug).addClass( "bugs" );
         $( '#' + bug).addClass( "toggleable" );
 
-        // Highlight the .....
-        $( '#'+bug).on( "mouseenter", function(){mainHighlight(bacteria.abxMain)} );
+        // When you hover over the **bug**, highlight the **syndrome**
+        // When you hover over the **bug**, highlight the **antibiotic**
+        $( '#'+bug).on( "mouseenter", function(){
+          mainHighlight(bacteria.synd, bacteria.fullName, bacteria.comments), 
+          mainHighlight(bacteria.abx,  bacteria.fullName, bacteria.comments)} );
         $( '#'+bug).on( "mouseleave", function(){clearHighlights()} );
     });
 

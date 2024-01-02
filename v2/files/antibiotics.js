@@ -15,13 +15,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'NAF': {
@@ -33,13 +34,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'Unasyn': {
@@ -51,13 +53,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'Augmentin': {
@@ -69,13 +72,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'Zosyn': {
@@ -87,13 +91,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
 
@@ -106,92 +111,97 @@ const ANTIBIOTICS = {
     ***/
     'CFZ': {
         name: 'Cefazolin (1G)',
-        fullName: 'Cefazolin / Cephalexin <small>(1G)</small>',
+        fullName: 'Cefazolin / Cephalexin <small>(1st generation)</small>',
         abxClass: 'cephalosporins',
         bugs: {
-            GNR:'', PsA:'', AmpC:'', 
+            GNR:'some', PsA:'', AmpC:'', 
             ESBL:'', CRE:'', Others:'', 
-            MSSA:'', MRSA:'', SOSA:'', 
-            Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            MSSA:'good', MRSA:'bad', SOSA:'some', 
+            Strep:'good', VRE:'', VSE:'',
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:''
+        },
         comments: 'comment goes here'
     },
     'FOX': {
         name: 'Cefoxitin (2G)',
-        fullName: '',
+        fullName: 'Cefoxitin <small>(2nd generation)</small>',
         abxClass: 'cephalosporins',
         bugs: {
             GNR:'', PsA:'', AmpC:'', 
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'CRO': {
         name: 'Ceftriaxone (3G)',
-        fullName: 'Ceftriaxone / Ceftazidime (3G)',
+        fullName: 'Ceftriaxone / Ceftazidime <small>(3rd generation)</small>',
         abxClass: 'cephalosporins',
         bugs: {
             GNR:'', PsA:'', AmpC:'', 
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
-    'Cefepime': {
+    'FEP': {
         name: 'Cefepime (4G)',
-        fullName: '',
+        fullName: 'Cefepime <small>(4th generation)</small>',
         abxClass: 'cephalosporins',
         bugs: {
             GNR:'good', PsA:'good', AmpC:'some', 
             ESBL:'bad', CRE:'bad', Others:'', 
             MSSA:'good', MRSA:'bad', SOSA:'', 
             Strep:'good', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:''
+        },
         comments: 'comment goes here'
     },
     'CPT': {
         name: 'Ceftaroline (5G)',
-        fullName: '',
+        fullName: 'Ceftaroline <small>(5th generation)</small>',
         abxClass: 'cephalosporins',
         bugs: {
             GNR:'', PsA:'', AmpC:'', 
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
 
@@ -200,7 +210,6 @@ const ANTIBIOTICS = {
      * LZD Linezolid
      * DAP Daptomycin
     ***/
-
     'VAN': {
         name: 'Vancomycin',
         fullName: '',
@@ -210,13 +219,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'broad', MRSA:'good', SOSA:'good', 
             Strep:'good', VRE:'bad', VSE:'good',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:''
+        },
         comments: 'comment goes here'
     },
     'LZD': {
@@ -228,13 +238,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'DAP': {
@@ -246,13 +257,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
 
@@ -269,13 +281,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'ETP': {
@@ -287,15 +300,17 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
+
     /***  tetracyclines
      * DOX Doxycycline
      * MIN Minocycline
@@ -310,13 +325,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:'good'
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'MIN': {
@@ -328,13 +344,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'TGC': {
@@ -346,13 +363,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     /***  anaerobic-abx
@@ -368,13 +386,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
     'CLI': {
@@ -386,13 +405,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     },
 
@@ -408,13 +428,14 @@ const ANTIBIOTICS = {
             ESBL:'', CRE:'', Others:'', 
             MSSA:'', MRSA:'', SOSA:'', 
             Strep:'', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
+            anaerobes:'', PNA:'', Zoo:''
+        },
         synd: {
             Empiric:'', UTI:'', CAP:'', HAP:'', 
             SSTI:'', Foot:'', Osteo:'', 
             IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'', 
-            Oral:''},
+            Meningitis:'', SA:'' 
+        },
         comments: 'comment goes here'
     }
 
