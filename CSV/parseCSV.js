@@ -11,8 +11,7 @@ row4,A4,B4
 /** parseCSV - Takes a string from a CSV file and processes it into an array 
  * of arrays. 
  * 
- * @param {string} str - A single string containing the CSV values. These should
- *                       be unquoted.
+ * @param {string} str - A single string containing the CSV values.
  * @returns {Array}      Returns an array of arrays
  * 
  * @example
@@ -98,7 +97,7 @@ function transpose(matrix) {
  *                            returned as a JavaScript object (true; default) or
  *                            as a JSON string (json=false).
  * @returns {(Object|string)} A Javascript object (or JSON string) with the 
- *                            values of the array renamed as objects. See the
+ *                            values of the array renamed as objects.
  *  
  * 
  * @example
@@ -140,7 +139,30 @@ function toJSON(arr, json=false){
     return json ? JSON.stringify(result) : result;
 }
 
-/* Some examples to demonstrate behavior */
+
+/** csvToJS - Wrapper function taking CSV to JS object
+ * 
+ * @param {string} str   - A single string containing the CSV values.
+ * @param {boolean} tsp  - A logical flag indicating if CSV should be transposed.
+ * @param {boolean} json - A logical flag if results should be returned as JSON,
+ *                         which can be helpful for debugging.
+ * @returns {(Object|string)} A Javascript object (or JSON string) with the 
+ *                            values of the array renamed as objects.
+ * @see parseCSV
+ * @see transpose
+ * @see toJSON
+ */
+function csvToJS(str, tsp=false, json=false) { 
+    var csv = parseCSV(str);
+
+    // Transpose if told to do so
+    csv = tsp ? transpose(csv) : csv;
+    
+    // Create the JS object or JSON string
+    return toJSON(csv, json)
+ }
+
+/* Some examples to demonstrate behavior 
 // Create the JSON using the format as is
 var objArray = parseCSV(csvStringExp);
 var onjJson = toJSON(objArray, true);
@@ -151,4 +173,24 @@ var objTransposed = transpose(objArray);
 var onjJsonTransposed = toJSON(objTransposed, true);
 console.log(objTransposed);
 console.log(onjJsonTransposed);
+*/
 
+
+const CSV_SYNDROME = `
+Bug-Syndrome,GNR,PsA,AmpC,ESBL,CRE,Others,MSSA,MRSA,SOSA,Strep,VRE,VSE,anaerobes,PNA,Zoo
+Empiric,com,com,com,occ,,,com,com,,com,,occ,occ,,occ
+UTI,com,com,com,occ,occ,,,,unk,,occ,occ,,,
+CAP,com,,occ,,,,occ,occ,,com,,,,com,
+HAP,com,com,com,occ,occ,occ,com,com,,com,,,,,
+SSTI,,,,,,,com,com,unk,com,,,occ,,
+Foot,occ,occ,,,,,com,com,unk,com,,,occ,,
+Osteo,com,com,,,,,com,com,occ,com,,,occ,,
+IAI,com,occ,,occ,,,occ,occ,,occ,occ,com,com,,
+Hepatobiliary,com,,,,,,,,,,occ,com,com,,
+SBP,com,,,,,,,,occ,com,,occ,,,
+Meningitis,,,,,,unk,,,,com,,,,,
+SA,com,occ,,,,,com,com,,com,,,,,
+`;
+
+console.log(  csvToJS(CSV_SYNDROME, false)  );
+console.log(  csvToJS(CSV_SYNDROME, true)  );

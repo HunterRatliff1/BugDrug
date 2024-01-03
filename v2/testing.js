@@ -127,51 +127,6 @@ $( document ).ready(function() {
     });
 
 
-      //$( "#syn_UTI").addClass( "active" );
-       
-    
-
-    //addHighlight(["Emperic", "AmpC"]);
-    //clearHighlights();
-
-  
-    
-
-    /*
-    Object.keys(INFECTION_TYPES).forEach(function(it) {
-        const infectionTypeData = INFECTION_TYPES[it];
-        $('.' + infectionTypeData.class).hover(
-          function() {
-            highlight(Object.keys(ANTIBIOTICS).map(function(a) {
-              return '.' + ANTIBIOTICS[a].class;
-            }), '');
-            removeHighlightBacteria(Object.keys(BACTERIA).map(function(b) {
-              return '.' + BACTERIA[b].class;
-            }));
-            highlight(Object.keys(INFECTION_TYPES).map(function(it) {
-              return '.' + INFECTION_TYPES[it].class;
-            }), '');
-            highlight(infectionTypeData.commonAntibiotics.map(function(a) {
-              return '.' + ANTIBIOTICS[a].class;
-            }), 'orange');
-            orangeHighlightBacteria(infectionTypeData.commonBacteria);
-            highlight(infectionTypeData.sometimesAntibiotics.map(function(a) {
-              return '.' + ANTIBIOTICS[a].class;
-            }), 'yellow');
-            yellowHighlightBacteria(infectionTypeData.sometimesBacteria);
-          },
-          function() {
-            highlight(infectionTypeData.commonAntibiotics.map(function(a) {
-              return '.' + ANTIBIOTICS[a].class;
-            }), '');
-            removeHighlightBacteria(infectionTypeData.commonBacteria);
-            highlight(infectionTypeData.sometimesAntibiotics.map(function(a) {
-              return '.' + ANTIBIOTICS[a].class;
-            }), '');
-            removeHighlightBacteria(infectionTypeData.sometimesBacteria);
-          }
-        )
-      });
-      */
+    console.log(BACTERIA);
 });
 
