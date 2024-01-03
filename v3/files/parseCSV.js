@@ -1,3 +1,60 @@
+/**
+ * @summary A script used to convert CSV strings into Javascript objects.
+ * 
+ * This file takes data from a comma-separated value file, and turn it into a
+ * javascript object (which is used in the main script). The workhorse function
+ * is `csvToJS()`, which accepts a javascript string (of the comma-separated 
+ * values). This function is just a wrapper function of:
+ * 
+ *   1. parseCSV:  Which takes the string of CSV data and turns it into a matrix
+ *                 (i.e. array of arrays)
+ *   2. transpose: Optional function which transposes the matrix. This prevents
+ *                 you from needing to define the same relationship twice (i.e.
+ *                 say that vanco treats MRSA in one file, and in a seperate 
+ *                 file also say that MRSA is treated with vanc)
+ *   3. toJSON:    Converts the matrix into JSON format
+ * 
+ * Unfortunatly CORS (cross origin requests) don't make it easy to read in the
+ * CSV file directly, so in order to make this more portable and reliable across
+ * browsers (and easier to debug), the CSV string is hard coded into the file.
+ * To update it, open the CSV file in a file editor (as a text file) and copy 
+ * the results into the strings defined in section II. If you're adapting this
+ * project into something new, you could use fetch instead (see this stack 
+ * overflow post: https://stackoverflow.com/q/14446447)
+ * 
+ * @author Hunter Ratliff
+ * @link https://github.com/HunterRatliff1/BugDrug
+ * 
+ * Created on    : 2024-01-02
+ * Last modified : 2024-01-03
+ * 
+ * @license MIT
+ * Copyright (c) 2023 Hunter Ratliff
+ * Permission is hereby granted, free of charge, to any person obtaining a copy 
+ * of this software and associated documentation files (the "Software"), to 
+ * deal in the Software without restriction, including without limitation the 
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
+ * sell copies of the Software, and to permit persons to whom the Software is 
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in 
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+ * IN THE SOFTWARE.
+ * 
+ */
+
+/******************************************************************************\
+ * SECTION I
+ * Define the functions
+ \*****************************************************************************/
+
 // Example CSV used to demonstrate the functions below
 const csvStringExp = `
 Label,colA,colB
@@ -176,6 +233,10 @@ console.log(onjJsonTransposed);
 */
 
 
+/******************************************************************************\
+ * SECTION II
+ * Define the actual CSV strings
+ \*****************************************************************************/
 const CSV_SYNDROME = `
 Bug-Syndrome,GNR,PsA,AmpC,ESBL,CRE,Others,MSSA,MRSA,SOSA,Strep,VRE,VSE,anaerobes,PNA,Zoo
 Empiric,com,com,com,occ,,,com,com,,com,,occ,occ,,occ
