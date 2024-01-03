@@ -1,3 +1,6 @@
+
+// Antibiotics are abbreviated based on the ASM's abbreviation conventions
+// https://journals.asm.org/abbreviations-conventions
 const ANTIBIOTICS = {
     /*** PENICILLINS
             AMP       PCN/Amox/Ampicillin
