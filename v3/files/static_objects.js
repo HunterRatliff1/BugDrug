@@ -181,28 +181,35 @@ const ANTIBIOTICS = {
         fullName: 'Vancomycin',
         examples: {
             "Vancomycin": {route: "IV"},
-            "Vancomycin ": {route: "PO for C diff"}},
+            "Vancomycin*": {route: "PO for C diff"}},
         abxClass: 'gram-positives',
-        comments: 'comment goes here'
+        comments: '<b>First line treatment</b> for methicillin-resistant <i>Staphylococcus spp</i>, including <b>MRSA</b> ' +
+        "and most of the coagulase negative staph (* the oral formulation is used for <i>Clostridioides difficile</i> " +
+        "colitis AKA C diff)." +
+        "<br><br>IV vancomycin is <b>nephrotoxic</b>. Observational studies have reported higher risk of AKI when " +
+        "combined with Zosyn (pip/tazo), but this is controversial. It will cause a rash if administered too fast " +
+        "(from histamine release), but this is not a true allergy. However, there is an association with DRESS syndrome, " +
+        "so not all rashes with vanco are the same! " 
     },
     'LZD': {
         name: 'Linezolid',
         fullName: '',
         examples: {Linezolid: {route: "IV or PO", trade: "Zyvox"}},
         abxClass: 'gram-positives',
-        comments: 'Used for <i>Staph aureus</i> (especially MRSA) and ' +
-        "Enterococcus (especially vancomycin-resistant <i>E. faecium</i>). " +
-        "Can use it orally since has great bioavailability.<br><br>" +
-        "Has risk of serotonin syndrome if given with SSRI/SNRIs since it's a " +
-        "weak MAOI. Will also cause myelospression (reversible) and peripheral " +
-        "neuropathy (irreversible) with long term use."
+        comments: 'Used for <i>Staph aureus</i> (especially MRSA) and Enterococcus (especially vancomycin-resistant ' +
+        "<i>E. faecium</i>). Can use it orally since has great bioavailability.<br><br>" +
+        "Has risk of <b>serotonin syndrome</b> if given with SSRI/SNRIs since it's a weak MAOI. Will also cause " +
+        "myelospression (reversible) and peripheral neuropathy (irreversible) with long term use."
     },
     'DAP': {
         name: 'Daptomycin',
         fullName: '',
         examples: {Daptomycin: {route: "IV", trade: "Cubicin"}},
         abxClass: 'gram-positives',
-        comments: 'comment goes here'
+        comments: 'Used for <i>Staph aureus</i> (especially MRSA) and Enterococcus (especially vancomycin-resistant ' +
+        "<i>E. faecium</i>). Should <b>not be used for pneumonia</b> since surfactant inactivates it.<br><br>" +
+        "" +
+        "May cause <b>myopathy</b> so you should hold any statins and check a creatine kinase weekly."
     },
 
     /***  carbapenems
@@ -211,17 +218,34 @@ const ANTIBIOTICS = {
     ***/
     'MEM': {
         name: 'Meropenem',
-        fullName: 'Mero/Dori/Imipenem',
-        examples: '',
+        fullName: '',
+        examples: {
+            Meropenem: {route: "IV", trade: "Merrem"},
+            Doripenem: {route: "IV"},
+            "Imipenem+Cilastatin": {route: "IV", trade: "Primaxin"}
+        },
         abxClass: 'carbapenems',
-        comments: 'comment goes here'
+        comments: 'Carbapenems are the broadest of all beta-lactams and cover some of the most difficult bacteria that ' +
+        "we frequently encounter (including <b>ESBLs</b>). Unfortunately, rates of resistance are increasing (<mark>see " +
+        "<b>CREs</b></mark>) so they should only be used in the sickest of patients. Generally, if a patient has a " +
+        "history of ESBL <u>but is immunocompetent and not septic</u>, don't just throw on meropenem without a reason " +
+        "(this is how we get CREs). Carbapenem exposure also increase the risk of C diff and other bad infections " +
+        "(e.g. stenotrophomonas).<br><br>"+
+        "Carbapenems are also associated with increased risk of seizures, especially in meningitis (and inconveniently " +
+        "decrease the levels of valproic acid). Imipenem has the highest risk. Doripenem isn't used as often since it " +
+        "has worse outcomes (especially for pneumonia)."
     },
     'ETP': {
         name: 'Ertapenem',
         fullName: '',
-        examples: '',
+        examples: {Ertapenem: {route: "IV/IM", trade: "Invanz"}},
         abxClass: 'carbapenems',
-        comments: 'comment goes here'
+        comments: 'Similar to other carbapenems (<mark>see <b>meropenem</b></mark>), with a few exceptions:<br>' +
+        "<ol><li>It has <b>once daily dosing</b>, which can be nice for OPAT. This is because it's so heavily bound to " +
+        "albumin (thus it should not be used if a patient's albumin is &lt;2.5 g/dL). Can also be given IM</li>" +
+        "<li>It does <b>not have <i>Pseudomonas</i></b> activity</li>" +
+        "<li>It's the most susceptible to carbapenemases (among the carbapenems)</li>" +
+        "</ol>"
     },
 
     /***  tetracyclines
