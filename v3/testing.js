@@ -150,11 +150,17 @@ $( document ).ready(function() {
         $( '#' + bug).addClass( "bugs" );
         $( '#' + bug).addClass( "toggleable" );
 
-        // When you hover over the **bug**, highlight the **syndrome**
-        // When you hover over the **bug**, highlight the **antibiotic**
-        $( '#'+bug).on( "mouseenter", function(){
-          mainHighlight(csvToJS(CSV_SYNDROME, true)[bug], bacteria.fullName, bacteria.comments), 
-          mainHighlight(csvToJS(CSV_ANTIBIOTICS, true)[bug],  bacteria.fullName, bacteria.comments)
+        // When you hover over the **bug**... 
+        $( '#'+bug + ", #"+bug+"-txt").on( "mouseenter", function(){
+            // highlight the **syndrome**
+            mainHighlight(csvToJS(CSV_SYNDROME, true)[bug], bacteria.fullName, bacteria.comments), 
+            // highlight the **antibiotic**
+            mainHighlight(csvToJS(CSV_ANTIBIOTICS, true)[bug],  bacteria.fullName, bacteria.comments)
+
+            /** Note: The jQuery code also adds an additional selector, 
+             * e.g. $(#GNR, #GNR-text) so the function is applied when you hover
+             * over the SVG text (in addition to the box)
+             **/ 
         } );
         $( '#'+bug).on( "mouseleave", function(){clearHighlights()} );
     });
