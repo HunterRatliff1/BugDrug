@@ -35,7 +35,7 @@ TGC Tigecycline
 ATM      Aztreonam
 Aminogly Amikacin/Gentamicin/Tobramycin
 Macro    Erythro/Azithromycin
-TMP-SMX
+TMP-SMX  Trimethoprim / Sulfamethoxazole (Bactrim)
 Quino    Flouroquinolones (Ciprofloxacin/Levofloxacin/Moxifloxacin)
 NIT      Nitrofurantoin
 FOF      Fosfomycin

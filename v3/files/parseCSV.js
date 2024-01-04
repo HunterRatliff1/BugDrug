@@ -270,11 +270,18 @@ LZD,,,,,,,broad,good,good,broad,good,broad,,,
 DAP,,,,,,,broad,good,good,broad,good,broad,,,
 MEM,broad,good,good,good,bad,,good,bad,,good,,,good,,
 ETP,broad,bad,good,good,bad,bad,good,bad,,good,,,good,,
-DOX,,,,,,,,,,,,,,,good
-MIN,,,,,,,,,,,,,,,
-TGC,,,,,,,,,,,,,,,
+DOX,,bad,,,,some,good,good,some,some,,,,good,good
+MIN,,bad,,,,some,good,good,some,some,,,,unk,some
+TGC,broad,bad,good,good,good,some,broad,broad,broad,broad,some,some,,broad,some
 MTZ,,,,,,,,,,,,,,,
 CLI,,,,,,,,,,,,,,,
+ATM,,,,,,,,,,,,,,,
+Aminogly,,,,,,,,,,,,,,,
+AZM,,,,,,,,,,,,,,,
+TMPSMX,,,,,,,,,,,,,,,
+Quino,,,,,,,,,,,,,,,
+NIT,,,,,,,,,,,,,,,
+FOF,,,,,,,,,,,,,,,
 `;
 /*
 console.log(  csvToJS(CSV_SYNDROME, false)  );

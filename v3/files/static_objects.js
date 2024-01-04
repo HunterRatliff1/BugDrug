@@ -256,21 +256,21 @@ const ANTIBIOTICS = {
     'DOX': {
         name: 'Doxycycline',
         fullName: '',
-        examples: '',
+        examples: {Doxycycline: {route: "IV/PO"}},
         abxClass: 'tetracyclines',
         comments: 'comment goes here'
     },
     'MIN': {
         name: 'Minocycline',
         fullName: '',
-        examples: '',
+        examples: {Minocycline: {route: "IV/PO"}},
         abxClass: 'tetracyclines',
         comments: 'comment goes here'
     },
     'TGC': {
         name: 'Tigecycline',
         fullName: '',
-        examples: '',
+        examples: {Tigecycline: {route: "IV", trade: "Tygacil"}},
         abxClass: 'tetracyclines',
         comments: 'comment goes here'
     },
@@ -293,9 +293,78 @@ const ANTIBIOTICS = {
         comments: 'comment goes here'
     },
 
-    /***  
+    /***  other antibiotics
+     * ATM      Aztreonam
+     * Aminogly Amikacin/Gentamicin/Tobramycin
+     * AZM      Erythro/Azithromycin
+     * TMP-SMX  Trimethoprim / Sulfamethoxazole (Bactrim)
+     * Quino    Flouroquinolones (Ciprofloxacin/Levofloxacin/Moxifloxacin)
+     * NIT      Nitrofurantoin
+     * FOF      Fosfomycin
      *  
     ***/
+    'ATM': {
+        name: 'Aztreonam',
+        fullName: '',
+        examples: {Aztreonam: {route: "IV"}},
+        abxClass: 'other-abx',
+        comments: 'comment goes here'
+    },
+    'Aminogly': {
+        name: 'Aminoglycosides',
+        fullName: '',
+        examples: {
+            Amikacin: {route: "IV"},
+            Gentamicin: {route: "IV"},
+            Tobramycin: {route: "IV"}
+        },
+        abxClass: 'other-abx',
+        comments: 'comment goes here'
+    },
+    'AZM': {
+        name: 'Azithromycin',
+        fullName: 'Macrolides',
+        examples: {
+            Azithromycin: {route: "PO/IV", trade: "Zithromax"},
+            Erythromycin : {route: "PO/IV"}
+        },
+        abxClass: 'other-abx',
+        comments: 'comment goes here'
+    },
+    'TMPSMX': {
+        name: 'Bactrim',
+        fullName: '',
+        examples: {"Trimethoprim-sulfamethoxazole": {
+            route: "IV/PO", trade: "Bactrim", abbv: "TMP-SMX"
+        }},
+        abxClass: 'other-abx',
+        comments: 'comment goes here'
+    },
+    'Quino': {
+        name: 'Fluoroquinolones',
+        fullName: 'Fluoroquinolones',
+        examples: {
+            Ciprofloxacin: {route: "PO/IV", trade: "Cipro"},
+            Levofloxacin: {route: "PO/IV", trade: "Levaquin"},
+            Moxifloxacin: {route: "PO/IV"}
+        },
+        abxClass: 'other-abx',
+        comments: 'comment goes here'
+    },
+    'NIT': {
+        name: 'Nitrofurantoin',
+        fullName: '',
+        examples: {Nitrofurantoin: {route: "PO", trade: "Macrobid"}},
+        abxClass: 'other-abx',
+        comments: 'comment goes here'
+    },
+    'FOF': {
+        name: 'Fosfomycin',
+        fullName: '',
+        examples: {Fosfomycin: {route: "PO"}},
+        abxClass: 'other-abx',
+        comments: 'comment goes here'
+    },
     'blank': {
         name: 'TEMPLATE',
         fullName: '',
