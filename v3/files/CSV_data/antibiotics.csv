@@ -14,9 +14,9 @@ LZD,,,,,,,broad,good,good,broad,good,broad,,,
 DAP,,,,,,,broad,good,good,broad,good,broad,,,
 MEM,broad,good,good,good,bad,,good,bad,,good,,,good,,
 ETP,broad,bad,good,good,bad,bad,good,bad,,good,,,good,,
-DOX,,bad,,,,some,good,good,some,some,,,,good,good
-MIN,,bad,,,,some,good,good,some,some,,,,unk,some
-TGC,broad,bad,good,good,good,some,broad,broad,broad,broad,some,some,,broad,some
+DOX,some,,,,,some,good,good,some,some,,,,good,good
+MIN,some,,,,,good,good,good,some,some,,,,good,some
+TGC,broad,bad,good,good,good,some,broad,broad,broad,broad,some,some,good,broad,some
 MTZ,,,,,,,,,,,,,,,
 CLI,,,,,,,,,,,,,,,
 ATM,,,,,,,,,,,,,,,

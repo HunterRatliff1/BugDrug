@@ -258,21 +258,38 @@ const ANTIBIOTICS = {
         fullName: '',
         examples: {Doxycycline: {route: "IV/PO"}},
         abxClass: 'tetracyclines',
-        comments: 'comment goes here'
+        comments: "Doxycycline has broad applications: It's used to treat <b>zoonotic</b> (Leptospirosis, Brucella, " +
+        "Q fever, Bartonella) and <b>tick-borne</b> (Rickettsia, Lyme, Babesiosis, Anaplasmosis/Ehrlichiosis) diseases, " +
+        'as well as the <b>"atypical" pneumonias</b> (Mycoplasma, Legionella, Chlamydia). Doxy also has activity against ' +
+        "Staph spp., including MRSA (though there can be resistance).<br><br>" +
+        "Tetracyclines (like doxy) are also nice because they don't need to be renally dosed. However, while they achieve " +
+        "good levels in tissues (e.g. skin, bone, lungs) they don't have very good penetration in the urine, CSF, or " +
+        "bloodstream so shouldn't be relied for UTIs or bactermia."
     },
     'MIN': {
         name: 'Minocycline',
         fullName: '',
         examples: {Minocycline: {route: "IV/PO"}},
         abxClass: 'tetracyclines',
-        comments: 'comment goes here'
+        comments: 'Minocycline is quite similar to doxycycline (see <mark><b>Doxycycline</b></mark> for overview of ' +
+        "tetracyclines), but generally has broader activity than doxycycline (exception: doxycycline works better for " +
+        "some of the tick-borne & zoonotic diseases). " +
+        'Minocycline has good activity against some of the <mark>"bad bugs"</mark>, namely <i>Stenotrophomonas</i> and ' + 
+        "<i>Acinetobacter</i>. It can have high rates of vestibular side effects (ataxia, vertigo) and turn the skin blue." +
+        "<br><br>Trivia fact: Minocycline is technically a disease-modifying antirheumatic drugs (DMARD) for rheumatoid " +
+        "arthritis, but please don't use it for that!"
     },
     'TGC': {
         name: 'Tigecycline',
         fullName: '',
         examples: {Tigecycline: {route: "IV", trade: "Tygacil"}},
         abxClass: 'tetracyclines',
-        comments: 'comment goes here'
+        comments: "If you see ID using tigecycline, it's an indicator that things probably aren't going great. Despite " +
+        "tigecycline's broad activity (CRE, <i>Acinetobacter</i>, <i>Stenotrophomonas</i>), it's often not the best " +
+        "option for the patient; randomized trials have shown <b>increased mortality and higher rates of failure</b> for " +
+        "tigecycline vs other antibiotics. It therefore has a <b>black box warning</b> and the FDA advises us to " +
+        'only use Tigecycline "in situations when alternative treatments are not suitable". It also has high rates of ' +
+        "GI side effects. Finally, despite it's broad activity, it <b>lacks Pseudomonas coverage</b>. "
     },
     /***  anaerobic-abx
      *  MTZ Metronidazole
