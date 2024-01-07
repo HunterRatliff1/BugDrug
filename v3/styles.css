@@ -51,3 +51,5 @@ text {
   li.na     {background: rgb(66,66,66,0.4)}
   rect.unk    {fill: #FFFF00;opacity:0.4;}
   li.unk     {background: rgb(255,255,0,0.4)}
+  rect.note    {fill: #FFFF00;opacity:0.4;}
+  li.note     {background: rgb(255,255,0,0.4)}
