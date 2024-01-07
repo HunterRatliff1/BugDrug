@@ -278,11 +278,10 @@ CLI,,,,,,,,,,,,,,,
 ATM,good,good,bad,,,,,,,,,,,,
 Aminogly,good,good,good,some,some,,note,note,note,note,note,note,,,
 AZM,,,,,,,,,,,,,,good,
-Quino,,,,,,,,,,,,,,good,
-TMPSMX,,,,,,,,,,,,,,,
+Quino,good,some,good,some,,some,some,,,some,,,some,good,
+TMPSMX,good,,good,,,some,good,good,good,,,,,,
 NIT,good,,,some,some,,,,note,,good,good,,,
 FOF,good,some,some,some,some,,,,note,,some,some,,,
-
 `;
 
 /*

@@ -366,7 +366,16 @@ const ANTIBIOTICS = {
             Moxifloxacin: {route: "PO/IV"}
         },
         abxClass: 'other-abx',
-        comments: 'comment goes here'
+        comments: "<ul>" +
+        "<li>Cipro doesn't have as good of gram positive activity (vs levo/moxi)</li>" +
+        "<li>Pseudomonas activity: cipro &gt; levo &gt;&gt; moxi</li>" +
+        "<li>Moxifloxacin is the only one with anaerobic coverage (but especially intraabdominal)</li>" +
+        "<li>For the <mark><b>Bad bugs</b>:</mark> can <b>sometimes</b> use Levofloxacin (Steno, Acinetobacter) or Cipro (Acinetobacter)</li>" +
+        "</ul>" +
+        "Associated with many side effects: <b>QT prolongation</b>, GI side effects (one of the highest rates of " +
+        "<b><i>C diff</i></b>), achilles tendon ruptures, development of <b>aortic aneurysm</b>, worsening of myasthenia " +
+        "gravis (to name a few)"
+        
     },
     'TMPSMX': {
         name: 'Bactrim',
@@ -375,7 +384,15 @@ const ANTIBIOTICS = {
             route: "IV/PO", trade: "Bactrim", abbv: "TMP-SMX"
         }},
         abxClass: 'other-abx',
-        comments: 'comment goes here'
+        comments: 'Bactrim has broad activity against many gram negative infections, including MDR bugs, such as (' +
+        "<i>Stenotrophomonas maltophilia</i>; <mark>see <b>Bad bugs</b></mark>), and Staph infections (including <b>MRSA</b>).<br><br>" +
+        "Monitor renal function on TMP-SMX. It can cause <b>acute kidney injury</b> (AIN or ATN) and <b>hyperkalemia</b> " +
+        "(from TMP blocking potassium secretion). Trimethoprim can also increase the serum creatinine independently " +
+        "(without affecting the GFR) by competing with creatinine for secretion from the proximal renal tubules. TMP-SMX " +
+        "also may cause <b>myelosuppresion</b> & ITP, GI side effects, <b>SJS/TEN</b>, and other side effects." +
+        "<br><br>Fun fact: In addition to treating bacterial infections, TMP-SMX has antifungal (<i>Pneumocystis " +
+        "jiroveci</i>), antiparasitic (<i>Toxoplasma gondii</i>), and antimycobacterial (<i>Mycobacterium fortuitum</i>) " +
+        "activity!"
     },
     'NIT': {
         name: 'Nitrofurantoin',
@@ -399,13 +416,6 @@ const ANTIBIOTICS = {
         "should avoid using fosfomycin as empiric treatment to prevent resistance (there isn't much cross resistance " +
         "with other antibiotics, so it can be a great stepdown from carbapenems for MDR complicated UTIs). Similarly, " +
         "always use cultures to guide your therapy, as there can be resistance to fosfomycin."
-    },
-    'blank': {
-        name: 'TEMPLATE',
-        fullName: '',
-        examples: '',
-        abxClass: 'other-abx',
-        comments: 'comment goes here'
     }
 
     
