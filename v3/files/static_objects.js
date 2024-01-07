@@ -6,7 +6,7 @@
  * @link https://github.com/HunterRatliff1/BugDrug
  * 
  * Created on    : 2023-12-31
- * Last modified : 2024-01-03
+ * Last modified : 2024-01-07
  * 
  * @license MIT
  * Copyright (c) 2023 Hunter Ratliff
@@ -325,7 +325,10 @@ const ANTIBIOTICS = {
         fullName: '',
         examples: {Aztreonam: {route: "IV"}},
         abxClass: 'other-abx',
-        comments: 'comment goes here'
+        comments: 'Aztreonam is a unique beta-lactam that is most often used in patients with a <b>true beta-lactam ("' +
+        'penicillin") allergy</b>. It exclusively covers gram negative bugs, including <i>Pseudomonas</i>. ' +
+        "It's a weak inducer of AmpC beta-lactamases, but is a good substrate (see <mark><b>AmpC</b></mark> for what " +
+        "this means). This makes it similar to ceftriaxone or pip/tazo for AmpC coverage: Not great"
     },
     'Aminogly': {
         name: 'Aminoglycosides',
@@ -336,7 +339,9 @@ const ANTIBIOTICS = {
             Tobramycin: {route: "IV"}
         },
         abxClass: 'other-abx',
-        comments: 'comment goes here'
+        comments: 'Aminoglycosides are used to treat gram negative infections, including <i>Pseudomonas</i>. ' +
+        "Gentamicin can have a synergistic effect for many gram positives (Staph aureus, Enterococcus)<br><br>" +
+        "Aminoglycosides has high rates of <b>nephrotoxicity & ototoxicity</b>, which limits their use in clinical practice"
     },
     'AZM': {
         name: 'Azithromycin',
@@ -344,6 +349,21 @@ const ANTIBIOTICS = {
         examples: {
             Azithromycin: {route: "PO/IV", trade: "Zithromax"},
             Erythromycin : {route: "PO/IV"}
+        },
+        abxClass: 'other-abx',
+        comments: 'Macrolides are commonly used for treatment of bacterial pneumonia. A "Z-pak" is 500mg of azithromycin, ' +
+        "followed by 250mg for 4 more days; it's also acceptable to do 500mg daily for 3 days. <br><br>" +
+        "As a class, macrolides are associated with <b>QTc prolongation</b> and GI symptoms. In fact, erythromycin is more " +
+        'so used for the pro-motility "side effects"; however, it ' + "shouldn't be used for more than 2 weeks since it " +
+        "down-regulates motilin receptors. Finally there are many drug-drug interactions, especially with cardiac medications"
+    },
+    'Quino': {
+        name: 'Fluoroquinolones',
+        fullName: 'Fluoroquinolones',
+        examples: {
+            Ciprofloxacin: {route: "PO/IV", trade: "Cipro"},
+            Levofloxacin: {route: "PO/IV", trade: "Levaquin"},
+            Moxifloxacin: {route: "PO/IV"}
         },
         abxClass: 'other-abx',
         comments: 'comment goes here'
@@ -357,30 +377,28 @@ const ANTIBIOTICS = {
         abxClass: 'other-abx',
         comments: 'comment goes here'
     },
-    'Quino': {
-        name: 'Fluoroquinolones',
-        fullName: 'Fluoroquinolones',
-        examples: {
-            Ciprofloxacin: {route: "PO/IV", trade: "Cipro"},
-            Levofloxacin: {route: "PO/IV", trade: "Levaquin"},
-            Moxifloxacin: {route: "PO/IV"}
-        },
-        abxClass: 'other-abx',
-        comments: 'comment goes here'
-    },
     'NIT': {
         name: 'Nitrofurantoin',
         fullName: '',
         examples: {Nitrofurantoin: {route: "PO", trade: "Macrobid"}},
         abxClass: 'other-abx',
-        comments: 'comment goes here'
+        comments: 'Nitrofurantoin is used to treat <b>uncomplicated</b> urinary tract infections, namely cystitis. It has ' +
+        "little activity outside of the bladder, so should <b>not be used for pyelonephritis</b>.<br><br>" +
+        "It can also be used for <b>UTI <u>prophylaxis</u></b>, although prolonged use can cause pulmonary fibrosis."
     },
     'FOF': {
         name: 'Fosfomycin',
         fullName: '',
         examples: {Fosfomycin: {route: "PO"}},
         abxClass: 'other-abx',
-        comments: 'comment goes here'
+        comments: 'In the US, oral fosfomycin is mainly used for UTIs (both complicated and uncomplicated, unlike ' +
+        "nitrofurantoin). Elsewhere the IV formulation is available, which has broader uses. It has activity against " +
+        "a broad range of bacteria, including gram negative Enterobacteriaceae (including ESBL) and gram positives " +
+        "(including VRE). <br><br>" +
+        "For uncomplicated UTIs, you can use a single dose, which makes it an attractive treatment option. However, you " +
+        "should avoid using fosfomycin as empiric treatment to prevent resistance (there isn't much cross resistance " +
+        "with other antibiotics, so it can be a great stepdown from carbapenems for MDR complicated UTIs). Similarly, " +
+        "always use cultures to guide your therapy, as there can be resistance to fosfomycin."
     },
     'blank': {
         name: 'TEMPLATE',
