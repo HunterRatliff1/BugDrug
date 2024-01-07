@@ -90,21 +90,21 @@ const ANTIBIOTICS = {
         comments: 'comment goes here'
     },
     'Unasyn': {
-        name: 'Unasyn',
+        name: 'Unasyn &trade;',
         fullName: 'AMP/SUL',
         examples: '',
         abxClass: 'penicillins',
         comments: 'comment goes here'
     },
     'Augmentin': {
-        name: 'Augmentin',
+        name: 'Augmentin &trade;',
         fullName: 'AMX/CLA',
         examples: '',
         abxClass: 'penicillins',
         comments: 'comment goes here'
     },
     'Zosyn': {
-        name: 'Zosyn',
+        name: 'Zosyn &trade;',
         fullName: 'Piperacillin/tazobactam (PIP/TZB)',
         examples: '',
         abxClass: 'penicillins',
@@ -298,16 +298,28 @@ const ANTIBIOTICS = {
     'MTZ': {
         name: 'Metronidazole',
         fullName: '',
-        examples: '',
+        examples: {Metronidazole: {route: "PO/IV", trade:"Flagyl"}},
         abxClass: 'anaerobic-abx',
-        comments: 'comment goes here'
+        comments: 'Metronidazole only covers anaerobes, but does a pretty good job when it comes to them! Traditionally, ' +
+        'folks say to use metronidazole "below the diaphragm" due to its excellent activity against anaerobic gram ' +
+        'negative bacilli (<i>Bacteroides fragilis</i>) and to use clindamycin "above the diaphragm" (metronidazole lacks ' +
+        "activity against <i>Actinomyces</i>).<br><br>" +
+        "Oral metronidazole has excellent bioavailability, so it's often used with another medication that covers gram " +
+        "negatives (e.g. a fluoroquinolone) as an oral regimen for intraabdominal infections. Unlike clindamycin, which " +
+        "can <i>cause</i> C diff colitis, metronidazole is sometimes used to <u>treat</u> C diff."
     },
     'CLI': {
         name: 'Clindamycin',
         fullName: '',
-        examples: '',
+        examples: {Clindamycin: {route: "PO/IV"}},
         abxClass: 'anaerobic-abx',
-        comments: 'comment goes here'
+        comments: 'Clindamycin is primarily used for anaerobic bacterial infections of the head & neck (has better ' +
+        "activity against <i>Actinomyces israelii</i> & peptostreptococci compared to metronidazole). Conversely, rates " +
+        "of resistance to <i>Bacteroides fragilis</i> are higher with clindamycin, so it's not used as much for " +
+        "intraabdominal infections. Notably, has high rates of <b><i>C diff</i> colitis</b>, so consider another agent.<br><br>" +
+        "The IV formulation is used to inhibit toxin production in necrotizing fasciitis & toxic shock syndrome, and " +
+        "the topical form is used for bacterial vaginosis & acne. Has some activity against MRSA, but used less often " + 
+        "due to increasing resistance & side effect profile."
     },
 
     /***  other antibiotics
@@ -789,7 +801,7 @@ const SYNDROMES = {
         "<br><br>" + COMMONTEXT.MDR
     },
     'SSTI': {
-        name: 'Cellulitis',
+        name: 'Cellulitis / SSTI',
         fullName: 'Cellulitis and other skin/soft tissue infections',
         bugs: {
             GNR:'', PsA:'', AmpC:'', 
@@ -927,7 +939,7 @@ const SYNDROMES = {
         "should be given 15-20 minutes <b>before the first dose of antibiotics</b>."
     },
     'SA': {
-        name: 'SA',
+        name: 'Septic arthritis',
         fullName: 'Septic arthritis',
         bugs: {
             GNR:'com', PsA:'occ', AmpC:'', 

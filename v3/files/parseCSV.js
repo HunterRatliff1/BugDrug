@@ -273,8 +273,8 @@ ETP,broad,bad,good,good,bad,bad,good,bad,,good,,,good,,
 DOX,some,,,,,some,good,good,some,some,,,,good,good
 MIN,some,,,,,good,good,good,some,some,,,,good,some
 TGC,broad,bad,good,good,good,some,broad,broad,broad,broad,,,some,broad,broad
-MTZ,,,,,,,,,,,,,,,
-CLI,,,,,,,,,,,,,,,
+MTZ,,,,,,,,,,,,,good,,
+CLI,,,,,,,some,some,some,some,,,good,,
 ATM,good,good,bad,,,,,,,,,,,,
 Aminogly,good,good,good,some,some,,note,note,note,note,note,note,,,
 AZM,,,,,,,,,,,,,,good,
