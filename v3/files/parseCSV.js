@@ -272,21 +272,34 @@ MEM,broad,good,good,good,bad,,good,bad,,good,,,good,,
 ETP,broad,bad,good,good,bad,bad,good,bad,,good,,,good,,
 DOX,some,,,,,some,good,good,some,some,,,,good,good
 MIN,some,,,,,good,good,good,some,some,,,,good,some
-TGC,broad,bad,good,good,good,some,broad,broad,broad,broad,some,some,good,broad,some
+TGC,broad,bad,good,good,good,some,broad,broad,broad,broad,,,some,broad,broad
 MTZ,,,,,,,,,,,,,,,
 CLI,,,,,,,,,,,,,,,
-ATM,,,,,,,,,,,,,,,
-Aminogly,,,,,,,,,,,,,,,
-AZM,,,,,,,,,,,,,,,
+ATM,good,good,bad,,,,,,,,,,,,
+Aminogly,good,good,good,some,some,,note,note,note,note,note,note,,,
+AZM,,,,,,,,,,,,,,good,
+Quino,,,,,,,,,,,,,,good,
 TMPSMX,,,,,,,,,,,,,,,
-Quino,,,,,,,,,,,,,,,
-NIT,,,,,,,,,,,,,,,
-FOF,,,,,,,,,,,,,,,
-`;
-/*
-console.log(  csvToJS(CSV_SYNDROME, false)  );
-console.log(  csvToJS(CSV_SYNDROME, true)  );
+NIT,good,,,some,some,,,,note,,good,good,,,
+FOF,good,some,some,some,some,,,,note,,some,some,,,
 
-console.log(  csvToJS(CSV_ANTIBIOTICS, false)  );
-console.log(  csvToJS(CSV_ANTIBIOTICS, true)  );
+`;
+
+/*
+// Worked examples
+// Specific syndrome to list of bugs
+console.log("Given the syndrome (UTI), what is its association with each bacteria?");
+console.log(  csvToJS(CSV_SYNDROME, false)["UTI"]  );
+
+// Specific bug to list of syndromes
+console.log("Given the bacteria (MSSA), what is its association with each syndrome?");
+console.log(  csvToJS(CSV_SYNDROME, true)["MSSA"]  );
+
+// Specific antibiotic to list of bugs
+console.log("Given the antibiotic (Linezolid), what is its activity for each bacteria?");
+console.log(  csvToJS(CSV_ANTIBIOTICS, false)["LZD"]  );
+
+// Specific bug to list of antibiotic
+console.log("Given the bacteria (MSSA), how is its activity for each antibiotic?");
+console.log(  csvToJS(CSV_ANTIBIOTICS, true)["MSSA"]  );
 */
