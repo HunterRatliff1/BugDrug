@@ -75,15 +75,21 @@ const ANTIBIOTICS = {
             Augmentin Amoxicillin-Clavulanate (Augmentin)
             Zosyn     Piperacillin-Tazobactam (Zosyn)
     ***/
-    'AMP': {
-        name: 'Amox/Amp',
-        fullName: '',
-        examples: '',
-        abxClass: 'penicillins',
-        comments: 'comment goes here'
-    },
     'NAF': {
         name: 'Naf/Oxacillin',
+        fullName: 'Anti-staphylococcal penicillins',
+        examples: {
+            Nafcillin: {route: "IV/IM"}, 
+            Oxacillin: {route: "IV"},
+            Dicloxacillin: {route: "PO"}
+        },
+        abxClass: 'penicillins',
+        comments: 'As the name implies, the anti-staphylococcal penicillins are the best treatment options for infections ' +
+        "with Staphylococcus spp. For methicillin-<u>susceptible</u> strain of Staph. aureus (MSSA), especially severe " +
+        "infections, outcomes are better if you use an anti-staphylococcal penicillin (or first generation cephalosporin)."
+    },
+    'AMP': {
+        name: 'Amox/Amp',
         fullName: '',
         examples: '',
         abxClass: 'penicillins',
@@ -291,6 +297,7 @@ const ANTIBIOTICS = {
         'only use Tigecycline "in situations when alternative treatments are not suitable". It also has high rates of ' +
         "GI side effects. Finally, despite it's broad activity, it <b>lacks Pseudomonas coverage</b>. "
     },
+
     /***  anaerobic-abx
      *  MTZ Metronidazole
      *  CLI Clindamycin
