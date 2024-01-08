@@ -89,32 +89,49 @@ const ANTIBIOTICS = {
         "infections, outcomes are better if you use an anti-staphylococcal penicillin (or first generation cephalosporin)."
     },
     'AMP': {
-        name: 'Amox/Amp',
-        fullName: '',
-        examples: '',
+        name: 'Amox / Amp',
+        fullName: 'Aminopenicillins',
+        examples: {
+            Ampicillin: {route: "IV"}, 
+            Amoxicillin: {route: "PO"}
+        },
         abxClass: 'penicillins',
-        comments: 'comment goes here'
-    },
-    'Unasyn': {
-        name: 'Unasyn &trade;',
-        fullName: 'AMP/SUL',
-        examples: '',
-        abxClass: 'penicillins',
-        comments: 'comment goes here'
+        comments: 'Both ampicillin & amoxicillin are great for strep coverage, and have very limited gram negative ' +
+        "coverage (gram negative coverage improves with adding a beta-lactam, see <mark>see <b>Augmentin & Unasyn</b></mark>). " +
+        "Ampicillin has activity against enterococci and <b><i>Listeria</i></b>"
     },
     'Augmentin': {
         name: 'Augmentin &trade;',
-        fullName: 'AMX/CLA',
-        examples: '',
+        fullName: '',
+        examples: {"Amoxicillin-Clavulanate": {route: "PO", trade:"Augmentin", abbv:"AMX/CLA"}},
         abxClass: 'penicillins',
-        comments: 'comment goes here'
+        comments: 'Augmentin adds the beta-lactamase inhibitor clavulanic acid to amoxicillin to give it more potent gram ' +
+        "negative coverage. It is ideal for infections of the head/neck & sinusitis."
+    },
+    'Unasyn': {
+        name: 'Unasyn &trade;',
+        fullName: '',
+        examples: {"Ampicillin-Sulbactam": {route: "IV", trade:"Unasyn", abbv:"AMP/SUL"}},
+        abxClass: 'penicillins',
+        comments: 'Unasyn adds the beta-lactamase inhibitor sulbactam to ampicillin to give it more potent gram ' +
+        "negative coverage (though increasing resistance limits its use for intraabdominal infections). It is ideal for " +
+        "infections of the head/neck.<br><br>" +
+        "High dose <b>sulbactam</b> can be used to treat <i>Acinetobacter</i> (<mark>see <b>Bad bugs</b></mark>). " +
+        "Ampicillin alone has no activity against <i>Acinetobacter</i>, but unfortunately there isn't a commercially " +
+        "available version of sulbactam alone (though there is Xacduro [Sulbactam/durlobactam])."
     },
     'Zosyn': {
         name: 'Zosyn &trade;',
-        fullName: 'Piperacillin/tazobactam (PIP/TZB)',
-        examples: '',
+        fullName: '',
+        examples: {"Piperacillin-Tazobactam": {route: "IV", trade:"Zosyn", abbv:"PIP/TZB"}},
         abxClass: 'penicillins',
-        comments: 'comment goes here'
+        comments: 'Has both <b><i>Pseudomonas</i></b> (from piperacillin) and <b>anaerobic</b> coverage, so it can be ' +
+        "ideal for emperic coverage of hospital associations (e.g <mark><b>HCAP</b></mark>) and intraabdominal infections. " +
+        "It's a weak inducer of AmpC beta-lactamases, but is a good substrate (see <mark><b>AmpC</b></mark> for what " +
+        "this means), so it's not ideally for AmpC producing bacteria.<br><br>" +
+        "There is some controversy regarding nephrotoxicity when combined with <mark><b>vancomycin</b></mark>. Vanco " +
+        "is nephrotoxic alone and recent evidence is casting doubt on Vanc-Zosyn nephrotoxicity, so ask your ID " +
+        "pharmacist their thoughts before using this combo."
     },
 
     /*** CEPHALOSPORINS
