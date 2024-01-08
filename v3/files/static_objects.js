@@ -66,6 +66,30 @@ const COMMONTEXT = {
  * 
  * Antibiotics are abbreviated based on the ASM's abbreviation conventions
  * https://journals.asm.org/abbreviations-conventions
+ * 
+ * ----------------------------------- SCHEMA ----------------------------------
+ * ANTIBIOTICS = {
+ *  "DOM ID": {
+ *      name: `A string to be displayed in the list, with a short name for the 
+ *             antibiotic`,
+ *      fullName: `(optional) The HTML code to be used as the title of the info 
+ *             box. If left blank and examples are given, then the examples 
+ *             replace the blank string`,
+ *      examples: { // Can be one or more objects with structure below
+ *          "Generic name 1": {
+ *              route: `(mandatory) String of the routes of administration`,
+ *              trade: `(optional) Trade name for this antibiotic`,
+ *              abbv:  `(optional) Abbreviation for the antibiotic`
+ *          },
+ *          "Generic name 2": {route: "...", trade:"...",abbv:"..."}
+ *      },
+ *      abxClass: `(mandatory) The DOM ID of the <ul> that the antibiotic should
+ *                 fall under`,
+ *      comments: `The HTML code to populate in the main part of the info box`
+ *  },
+ *  "Another DOM ID": "{...}"
+ * }
+ *
  \*****************************************************************************/
 const ANTIBIOTICS = {
     /*** PENICILLINS
@@ -465,300 +489,90 @@ const BACTERIA = {
         name: 'Enterobacterales (gram negative rods)',
         fullName: 'Enterobacterales (gram negative rods)',
         bugClass: 'GN',
-        synd: {
-            Empiric:'com', UTI:'com', CAP:'com', HAP:'com', 
-            SSTI:'', Foot:'occ', Osteo:'com', 
-            IAI:'com', Hepatobiliary:'com', SBP:'com', 
-            Meningitis:'', SA:'com'
-        },
-        abx: {
-            AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-            CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-            VAN:'', LZD:'', DAP:'',
-            MEM:'', ETP:'', 
-            DOX:'', MIN:'', TGC:'',
-            MTZ:'', CLI:''
-        },
         comments: ''
     },
     'PsA': {
         name: 'Pseudomonas',
         fullName: 'Pseudomonas',
         bugClass: 'GN',
-        synd: {
-            Empiric:'com', UTI:'com', CAP:'', HAP:'com', 
-            SSTI:'', Foot:'occ', Osteo:'com', 
-            IAI:'occ', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'occ'
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'good', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'AmpC': {
         name: 'AmpC producers (HECK Yes)',
         fullName: '',
         bugClass: 'GN',
-        synd: {
-            Empiric:'com', UTI:'com', CAP:'occ', HAP:'com', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'ESBL': {
         name: 'Extended-spectrum beta-lactamases',
         fullName: '',
         bugClass: 'GN',
-        synd: {
-            Empiric:'occ', UTI:'occ', CAP:'', HAP:'occ', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'CRE': {
         name: 'Carbapenem-resistant Enterobacterales',
         fullName: '',
         bugClass: 'GN',
-        synd: {
-            Empiric:'', UTI:'occ', CAP:'', HAP:'occ', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'Others': {
         name: 'Other notable Enterobacterales',
         fullName: '',
         bugClass: 'GN',
-        synd: {
-            Empiric:'', UTI:'', CAP:'', HAP:'occ', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'unk', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },     
     'MSSA': {
         name: 'MSSA',
         fullName: '',
         bugClass: 'GP',
-        synd: {
-            Empiric:'com', UTI:'', CAP:'occ', HAP:'com', 
-            SSTI:'com', Foot:'com', Osteo:'com', 
-            IAI:'occ', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'com'
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'MRSA': {
         name: 'MRSA',
         fullName: '',
         bugClass: 'GP',
-        synd: {
-            Empiric:'com', UTI:'', CAP:'occ', HAP:'com', 
-            SSTI:'com', Foot:'com', Osteo:'com', 
-            IAI:'occ', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:'com'
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'SOSA': {
         name: 'Staph other than Staph aureus',
         fullName: '',
         bugClass: 'GP',
-        synd: {
-            Empiric:'', UTI:'unk', CAP:'', HAP:'', 
-            SSTI:'unk', Foot:'unk', Osteo:'occ', 
-            IAI:'', Hepatobiliary:'', SBP:'occ', 
-            Meningitis:'', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },  
     'Strep': {
         name: 'Strep spp.',
         fullName: '',
         bugClass: 'GP',
-        synd: {
-            Empiric:'com', UTI:'', CAP:'com', HAP:'com', 
-            SSTI:'com', Foot:'com', Osteo:'com', 
-            IAI:'occ', Hepatobiliary:'', SBP:'com', 
-            Meningitis:'com', SA:'com'
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },  
     'VSE': {
         name: 'Vancomycin-sensitive Enterococcus',
         fullName: '',
         bugClass: 'GP',
-        synd: {
-            Empiric:'occ', UTI:'occ', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'com', Hepatobiliary:'com', SBP:'occ', 
-            Meningitis:'', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'VRE': {
         name: 'Vancomycin-resistant Enterococcus',
         fullName: '',
         bugClass: 'GP',
-        synd: {
-            Empiric:'', UTI:'occ', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'occ', Hepatobiliary:'occ', SBP:'', 
-            Meningitis:'', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'anaerobes': {
         name: 'Anaerobes',
         fullName: '',
         bugClass: 'ana',
-        synd: {
-            Empiric:'occ', UTI:'', CAP:'', HAP:'', 
-            SSTI:'occ', Foot:'occ', Osteo:'occ', 
-            IAI:'com', Hepatobiliary:'com', SBP:'', 
-            Meningitis:'', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'PNA': {
         name: 'Atypical penumonias',
         fullName: '',
         bugClass: 'atyp',
-        synd: {
-            Empiric:'', UTI:'', CAP:'com', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     },
     'Zoo': {
         name: 'Zoonotic bacteria',
         fullName: '',
         bugClass: 'atyp',
-        synd: {
-            Empiric:'occ', UTI:'', CAP:'', HAP:'', 
-            SSTI:'', Foot:'', Osteo:'', 
-            IAI:'', Hepatobiliary:'', SBP:'', 
-            Meningitis:'', SA:''
-        },
-        abx: {
-                AMP:'', NAF:'', Unasyn:'', Augmentin:'', Zosyn:'',
-                CFZ:'', FOX:'', CRO:'', FEP:'', CPT:'',
-                VAN:'', LZD:'', DAP:'',
-                MEM:'', ETP:'', 
-                DOX:'good', MIN:'', TGC:'',
-                MTZ:'', CLI:''
-            },
         comments: ''
     }
 };
@@ -770,12 +584,6 @@ const SYNDROMES = {
     'Empiric': {
         name: 'Empiric / Sepsis',
         fullName: 'Empiric treatment for sepsis',
-        bugs: {
-            GNR:'com', PsA:'com', AmpC:'com', 
-            ESBL:'occ', CRE:'', Others:'', 
-            MSSA:'com', MRSA:'com', SOSA:'', 
-            Strep:'com', VRE:'', VSE:'occ',
-            anaerobes:'occ', PNA:'', Zoo:'occ'},
         comments: "Sepsis is complicated and this tool doesn't take into " + 
         "account important factors (e.g. immunocompromise, prior " +
         "micro data, antibiotic exposure)" +
@@ -787,12 +595,6 @@ const SYNDROMES = {
     'UTI': {
         name: 'UTI',
         fullName: 'Urinary tract infection',
-        bugs: {
-            GNR:'com', PsA:'com', AmpC:'com', 
-            ESBL:'occ', CRE:'occ', Others:'', 
-            MSSA:'', MRSA:'', SOSA:'unk', 
-            Strep:'', VRE:'occ', VSE:'occ',
-            anaerobes:'', PNA:'', Zoo:''},
         comments: 
             '<i>Staphylococcus saprophyticus</i> can also cause UTIs. ' +
             '<i>Staph aureus</i> is <b>not normal</b> in the urine. ' +
@@ -803,36 +605,18 @@ const SYNDROMES = {
     'CAP': {
         name: 'CAP',
         fullName: 'Community acquired pneumonia',
-        bugs: {
-            GNR:'com', PsA:'', AmpC:'occ', 
-            ESBL:'', CRE:'', Others:'', 
-            MSSA:'occ', MRSA:'occ', SOSA:'', 
-            Strep:'com', VRE:'', VSE:'',
-            anaerobes:'', PNA:'com', Zoo:''},
         comments: COMMONTEXT.PNA + " <mark>Also see <b>HCAP</b></mark>" + 
         "<br><br>" + COMMONTEXT.aspiration 
     },
     'HAP': {
         name: 'HCAP',
         fullName: 'Pneumonia with risk factors',
-        bugs: {
-            GNR:'com', PsA:'com', AmpC:'com', 
-            ESBL:'occ', CRE:'occ', Others:'occ', 
-            MSSA:'com', MRSA:'com', SOSA:'', 
-            Strep:'com', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
         comments: COMMONTEXT.PNA + " <mark>Also see <b>CAP</b></mark>" + 
         "<br><br>" + COMMONTEXT.MDR
     },
     'SSTI': {
         name: 'Cellulitis / SSTI',
         fullName: 'Cellulitis and other skin/soft tissue infections',
-        bugs: {
-            GNR:'', PsA:'', AmpC:'', 
-            ESBL:'', CRE:'', Others:'', 
-            MSSA:'com', MRSA:'com', SOSA:'unk', 
-            Strep:'com', VRE:'', VSE:'',
-            anaerobes:'occ', PNA:'', Zoo:''},
         comments: 'Common simple SSTIs include cellulitis, erysipelas, impetigo, ' +
         "ecthyma, folliculitis, furuncles, carbuncles, and abscesses. " +
         "Classically, <b>purulent</b> infections are caused by <i>Staph aureus</i> " +
@@ -850,12 +634,6 @@ const SYNDROMES = {
     'Foot': {
         name: 'Foot ulcer',
         fullName: 'Foot ulcers (with focus on diabetes)',
-        bugs: {
-            GNR:'occ', PsA:'occ', AmpC:'', 
-            ESBL:'', CRE:'', Others:'', 
-            MSSA:'com', MRSA:'com', SOSA:'unk', 
-            Strep:'com', VRE:'', VSE:'',
-            anaerobes:'occ', PNA:'', Zoo:''},
         comments: 'This is a complicated topic, but my (oversimplified) approach ' +
         "is in a stepwise manner: <ol><li>" +
         "<b>Superficial inflammation: </b>Staph (including MRSA) and strep</li><li>" + 
@@ -871,12 +649,6 @@ const SYNDROMES = {
     'Osteo': {
         name: 'Osteomyelitis',
         fullName: 'Osteomyelitis',
-        bugs: {
-            GNR:'com', PsA:'com', AmpC:'', 
-            ESBL:'', CRE:'', Others:'', 
-            MSSA:'com', MRSA:'com', SOSA:'occ', 
-            Strep:'com', VRE:'', VSE:'',
-            anaerobes:'occ', PNA:'', Zoo:''},
         comments: 'This is an oversimplified approach to the <i>most common</i> ' +
         "casuses of <b class='text-danger'>non-hematogenous</b>, osteomyelitis " + 
         "<b class='text-info'>in adults</b>. Anaerobes are generally more of a " +
@@ -897,12 +669,6 @@ const SYNDROMES = {
     'IAI': {
         name: 'IAI',
         fullName: 'Intra-abdominal infection (bowel flora)',
-        bugs: {
-            GNR:'com', PsA:'occ', AmpC:'', 
-            ESBL:'occ', CRE:'', Others:'', 
-            MSSA:'occ', MRSA:'occ', SOSA:'', 
-            Strep:'occ', VRE:'occ', VSE:'com',
-            anaerobes:'com', PNA:'', Zoo:''},
         comments: 'Clinical scenerios include secondary peritonitis (bowel ' +
         "perforation, ischemic bowel, intraabdominal abscess), diverticulitis, " +
         "ruptured appendix, etc. <b>Anaerobic coverage is a must</b> (for " +
@@ -916,12 +682,6 @@ const SYNDROMES = {
     'Hepatobiliary': {
         name: 'Hepatobiliary infections',
         fullName: 'Hepatobiliary stuff (cholangitis, cholecystitis, liver abscess)',
-        bugs: {
-            GNR:'com', PsA:'', AmpC:'', 
-            ESBL:'', CRE:'', Others:'', 
-            MSSA:'', MRSA:'', SOSA:'', 
-            Strep:'', VRE:'occ', VSE:'com',
-            anaerobes:'com', PNA:'', Zoo:''},
         comments: 'Most common bacteria are enterobacteriaceae (gram negative rods) ' +
         "enterococcus, and anaerobes (Clostridium and Bacteroides spp). For many " +
         "of these conditions antibiotics are not definitive therapy, and these " +
@@ -931,12 +691,6 @@ const SYNDROMES = {
     'SBP': {
         name: 'SBP',
         fullName: 'Spontaneous bacterial peritonitis',
-        bugs: {
-            GNR:'com', PsA:'', AmpC:'', 
-            ESBL:'', CRE:'', Others:'', 
-            MSSA:'', MRSA:'', SOSA:'occ', 
-            Strep:'com', VRE:'', VSE:'occ',
-            anaerobes:'', PNA:'', Zoo:''},
         comments: 'Seen in cirrhosis patients with ascites. Diagnostic criteria ' +
         "&#8805; 250 cells/uL from ascitic fluid. Cultures of ascitic fluid is " +
         "often negative. Most common treatment is ceftriaxone"
@@ -944,12 +698,6 @@ const SYNDROMES = {
     'Meningitis': {
         name: 'Meningitis',
         fullName: 'Bacterial meningitis (community acquired)',
-        bugs: {
-            GNR:'', PsA:'', AmpC:'', 
-            ESBL:'', CRE:'', Others:'unk', 
-            MSSA:'', MRSA:'', SOSA:'', 
-            Strep:'com', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
         comments: "This covers <b class='text-danger'><u>immunocompetent</u></b> " +
         "<b class='text-info'>adults</b> with acute <b>bacterial</b> meningitis. " +
         'Meningitis does not fit well into the "bacteria" schema ' + "I've " +
@@ -965,12 +713,6 @@ const SYNDROMES = {
     'SA': {
         name: 'Septic arthritis',
         fullName: 'Septic arthritis',
-        bugs: {
-            GNR:'com', PsA:'occ', AmpC:'', 
-            ESBL:'', CRE:'', Others:'', 
-            MSSA:'com', MRSA:'com', SOSA:'', 
-            Strep:'com', VRE:'', VSE:'',
-            anaerobes:'', PNA:'', Zoo:''},
         comments: 'Most common pathogens are Staph aureus, Streptococcus sp., ' +
         "and gram negative rods. If sexually active, consider <i>Neisseria " +
         "gonorrhoeae</i>"
