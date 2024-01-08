@@ -284,7 +284,7 @@ $( document ).ready(function() {
             addHighlights(csvToJS(CSV_SYNDROME, true)[bug]),    // highlight the **syndromes**
             addHighlights(csvToJS(CSV_ANTIBIOTICS, true)[bug]), // highlight the **antibiotics**
             // Add info box
-            addInfoBox(bacteria.fullName, bacteria.comments)
+            addInfoBox(bacteria.name, bacteria.comments, bacteria.bugExamples)
 
             /** Note: The jQuery code also adds an additional selector, 
              * e.g. $(#GNR, #GNR-text) so the function is applied when you hover
