@@ -487,93 +487,109 @@ const ANTIBIOTICS = {
 const BACTERIA = {
     'GNR': {
         name: 'Enterobacterales (gram negative rods)',
-        fullName: 'Enterobacterales (gram negative rods)',
+        bugExamples: 'Enterobacterales (gram negative rods)',
         bugClass: 'GN',
         comments: ''
     },
     'PsA': {
-        name: 'Pseudomonas',
-        fullName: 'Pseudomonas',
+        name: 'Pseudomonas aeruginosa (susceptible)',
+        bugExamples: '',
         bugClass: 'GN',
         comments: ''
     },
     'AmpC': {
         name: 'AmpC producers (HECK Yes)',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'GN',
         comments: ''
     },
     'ESBL': {
         name: 'Extended-spectrum beta-lactamases',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'GN',
         comments: ''
     },
     'CRE': {
         name: 'Carbapenem-resistant Enterobacterales',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'GN',
         comments: ''
     },
     'Others': {
         name: 'Other notable Enterobacterales',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'GN',
         comments: ''
     },     
     'MSSA': {
         name: 'MSSA',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'GP',
         comments: ''
     },
     'MRSA': {
         name: 'MRSA',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'GP',
         comments: ''
     },
     'SOSA': {
         name: 'Staph other than Staph aureus',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'GP',
         comments: ''
     },  
     'Strep': {
-        name: 'Strep spp.',
-        fullName: '',
+        name: 'Streptococcus spp.',
+        bugExamples: `S. pyogenes (GAS, &#946;), S. agalactiae (GBS, &#946;), S.  pneumoniae (&#593;), viridans group 
+        (&#593;), anginosus group (varies)`,
         bugClass: 'GP',
-        comments: ''
+        comments: `The Streptococcus spp. are a confusing bunch of gram positive cocci <b>in chains</b>,  because we 
+        have multiple ways of classifying to them (e.g. &#593;/&#946;/&#947; hemolysis or the Lancefield groups A-F). 
+        In the future I should make a schema for strep alone, but for now lets focus on a few of the highest yield 
+        species: <ul>
+        <li>Group A (<i><b>S. pyogenes</b></i>) and other &#946; hemolytic strep can cause cellulitis, pharyngitis, bacteremia</li>
+        <li><i><b>S. agalactiae</b></i> (Group B, &#946; hemolytic) can cause neonatal meningitis but also causes infections 
+        in older/immunocompromised adults</li>
+        <li><i><b>S. pneumoniae</b></i> (&#593; hemolytic) can cause pneumonia, sinusitis, meningitis, bacteremia</li>
+        <li>&#947;-hemolytic strep, formerly GDS, are now Enterococcus; <mark>see <b>VSE</b> & <b>VRE</b></mark></li>
+        </ul>`
     },  
     'VSE': {
         name: 'Vancomycin-sensitive Enterococcus',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'GP',
         comments: ''
     },
     'VRE': {
         name: 'Vancomycin-resistant Enterococcus',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'GP',
         comments: ''
     },
     'anaerobes': {
         name: 'Anaerobes',
-        fullName: '',
+        bugExamples: '',
         bugClass: 'ana',
         comments: ''
     },
     'PNA': {
-        name: 'Atypical penumonias',
-        fullName: '',
+        name: 'Atypical pneumonias',
+        bugExamples: 'Mycoplasma pneumoniae, Legionella pneumophila, Chlamydia pneumoniae, Chlamydia psittaci',
         bugClass: 'atyp',
-        comments: ''
+        comments: `Atypical pneumonias are called "atypical" because they do not grow well with traditional methods. 
+        This is in part because most of these bacteria lack cell walls. <i>C pneumoniae</i> often develops in younger 
+        children, whereas <i>C psittaci</i> is more assocaited with pet birds. <i>Mycoplasma</i> is the classic "walking 
+        pneumonia and is generally less severe than <i>Legionella</i>.`
     },
     'Zoo': {
-        name: 'Zoonotic bacteria',
-        fullName: '',
+        name: 'Zoonotic & tick-borne bacteria',
+        bugExamples: "<u>Zoonotic:</u> Leptospirosis, Brucella, Q fever, Bartonella, Yersinia pestis<br> " +
+        "<u>Tick-borne:</u> Rickettsia, Lyme, Babesiosis, Anaplasmosis/Ehrlichiosis, Tularemia",
         bugClass: 'atyp',
-        comments: ''
+        comments: `This is such a broad category and it's beyond the scope of this page to talk about all of the 
+        zoonotic & tick-borne pathogens (and their treatments). The important takeaway for learners is that 
+        tetracyclines, in particular <mar><b>doxycycline</b></mark> has activity against many of these bugs.`
     }
 };
 
