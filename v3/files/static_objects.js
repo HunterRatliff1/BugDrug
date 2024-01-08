@@ -269,7 +269,7 @@ const ANTIBIOTICS = {
         examples: {
             Meropenem: {route: "IV", trade: "Merrem"},
             Doripenem: {route: "IV"},
-            "Imipenem+Cilastatin": {route: "IV", trade: "Primaxin"}
+            "Imipenem-Cilastatin": {route: "IV", trade: "Primaxin", abbv: "IPM-CLN"}
         },
         abxClass: 'carbapenems',
         comments: 'Carbapenems are the broadest of all beta-lactams and cover some of the most difficult bacteria that ' +
