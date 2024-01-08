@@ -156,30 +156,55 @@ function addHighlights(listOfIDs, defaultClass="na") {
 function addInfoBox(title="", text="", subtitle="") {
 
     /**
-     * For cases when there...
+     * For cases when the subtitle is not a string, we're going to assume that
+     * it's a complex object, like `ANTIBIOTICS.MEM.examples`, that contains
+     * the generic antibiotic name as the key, and additional (optional) 
+     * key:value pairs listing parameters (namely, route, trade, and abbv).
+     * 
+     * The goal is to get the JSON data below:
+     * {
+     *    Meropenem: {route: "IV", trade: "Merrem"},
+     *    Doripenem: {route: "IV"},
+     *    "Imipenem-Cilastatin": {route: "IV", trade: "Primaxin", abbv: "IPM-CLN"}
+     *  }
+     * 
+     * To output formatted text like this:
+     * Meropenem (Merrem, IV) / Doripenem (IV) / Imipenem-Cilastatin [IPM-CLN] (Primaxin, IV)
      */
-    if(subtitle!=""){
-        var subtext = []; // An array to push results to (e.g. list of abx) 
-
-        // todo: better documentation here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if(typeof(subtitle)!=="string"){
+        var output = []; // An array to push results to (e.g. list of abx)
+        
+        /** For each antibiotic that is given, run through the code below */ 
         Object.keys(subtitle).forEach(function(key){
             var item = subtitle[key];
             var html = "";  // This will be the html code for the item
 
-            // For simplicity, will always assume that the route is listed
-            html += key + " (" + item.route;
-            if(item.trade != undefined){
-                html += ', <span class="text-info">' + item.trade + '</span>'; 
-            }
-            if(item.abbv != undefined){
-                html += ', <small>[' + item.abbv + ']</small>';
-            }
-            html += ")";
+            // Start by adding the key (generic name of the abx)
+            html += key;
 
-            subtext.push(html);
+            // If an abbreviation is given, add it after the name
+            if(item.abbv != undefined){
+                html += ' <small>[' + item.abbv + ']</small>';
+            }
+
+            /** Now we're to the stuff that goes in the parentheses. One or more 
+             *  of these may not be defined, and we only want the parentheses
+             *  to show up if at least one is defined */
+            var parenth = [];
+            if(item.trade != undefined){
+                parenth.push('<span class="text-info">' + item.trade + '</span>');
+            }
+            if(item.route != undefined){
+                parenth.push(item.route);
+            }
+            if(parenth.length>0){ // Only run if at least one is defined
+                html += ' (' + parenth.join(", ") + ')';
+            }
+
+            output.push(html);
         });
 
-        subtitle = subtext.join(" / ");
+        subtitle = output.join(" / ");
     }
 
     // If given subtitle w/o title, switch the two
