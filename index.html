@@ -59,8 +59,9 @@
                     
                     <rect x="000" y="000" width="360" height="240" style="fill:none;opacity:1;" stroke-width="5"/>
                     <rect x="360" y="000" width="360" height="240" style="fill:none;opacity:1;" stroke-width="5"/>
-                    <rect x="000" y="240" width="360" height="120" style="fill:none;opacity:1;" stroke-width="5"/>
-                    <rect x="360" y="240" width="360" height="120" style="fill:none;opacity:1;" stroke-width="5"/>
+                    <rect x="000" y="240" width="320" height="120" style="fill:none;opacity:1;" stroke-width="5"/>
+                    <rect x="320" y="240" width="080" height="120" style="fill:none;opacity:1;" stroke-width="5"/>
+                    <rect x="400" y="240" width="320" height="120" style="fill:none;opacity:1;" stroke-width="5"/>
                     
                     <!-- Gram negative side --> 
                     
@@ -79,9 +80,12 @@
                     
                     <rect x="000" y="200" width="120" height="40" id="CRE" class="GN" />
                     <text x="60" y="220" id="CRE-txt" fill="#000000">CRE</text>
-                    
-                    <rect x="120" y="200" width="240" height="40" id="Others" class="GN" />
-                    <text x="240" y="220" id="Others-txt" fill="#000000">Bad bugs</text>
+
+                    <rect x="120" y="200" width="120" height="40" id="Steno" class="GN" />
+                    <text x="180" y="220" id="Steno-txt" fill="#000000">Steno</text>
+
+                    <rect x="240" y="200" width="120" height="40" id="CRAB" class="GN" />
+                    <text x="300" y="220" id="CRAB-txt" fill="#000000">Acinetobacter</text>
                     
                     <!-- Gram positive side --> 
                     
@@ -102,20 +106,22 @@
                     
                     <rect x="600" y="120" width="120" height="120" id="VRE" class="GP" />
                     <text x="660" y="180" id="VRE-txt" fill="#000000">VRE</text>
-                    
+
                     <!-- Anaerobes --> 
+                    <rect x="000" y="240" width="320" height="120" id="anaerobes" class="ana" />
+                    <text x="160" y="300" id="anaerobes-txt" fill="#000000">Anaerobes</text>
                     
-                    <rect x="000" y="240" width="360" height="120" id="anaerobes" class="ana" />
-                    <text x="180" y="300" id="anaerobes-txt" fill="#000000">Anaerobes</text>
-                    
+                    <!-- Other --> 
+                    <rect x="320" y="240" width="80" height="120" id="Other" class="other" />
+                    <text x="360" y="300" id="other-txt" fill="black">Misc</text>
+
                     <!-- Atypical -->
+                    <rect x="400" y="240" width="160" height="120" id="PNA" class="atyp" />
+                    <text x="480" y="290" id="PNA-txt" fill="#000000">Atypical</text>
+                    <text x="480" y="310" id="PNA-txt" fill="#000000">Pneumonia</text>
                     
-                    <rect x="360" y="240" width="180" height="120" id="PNA" class="atyp" />
-                    <text x="450" y="290" id="PNA-txt" fill="#000000">Atypical</text>
-                    <text x="450" y="310" id="PNA-txt" fill="#000000">Pneumonia</text>
-                    
-                    <rect x="540" y="240" width="180" height="120" id="Zoo" class="atyp" />
-                    <text x="630" y="300" id="Zoo-txt" fill="#000000">Zoonotic</text>
+                    <rect x="560" y="240" width="160" height="120" id="Zoo" class="atyp" />
+                    <text x="640" y="300" id="Zoo-txt" fill="#000000">Zoonotic</text>
                     
                 </svg>
                 <div class="card m-2 bg-light">

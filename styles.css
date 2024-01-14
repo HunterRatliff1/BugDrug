@@ -25,6 +25,7 @@ text {
   rect.GP {fill: #7570b3;} /* #7570b3 */
   rect.ana {fill: #1b9e77;} /* #1b9e77 */
   rect.atyp {fill: #d95f02;} /* #d95f02 */
+  rect.other {fill: #424242;} /* #f5f7a5 */
 
   rect.active {
     fill: rgb(51,160,44);opacity:0.8;

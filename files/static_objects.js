@@ -140,7 +140,7 @@ const ANTIBIOTICS = {
         comments: 'Unasyn adds the beta-lactamase inhibitor sulbactam to ampicillin to give it more potent gram ' +
         "negative coverage (though increasing resistance limits its use for intraabdominal infections). It is ideal for " +
         "infections of the head/neck.<br><br>" +
-        "High dose <b>sulbactam</b> can be used to treat <i>Acinetobacter</i> (<mark>see <b>Bad bugs</b></mark>). " +
+        "High dose <b>sulbactam</b> can be used to treat <mark><b><i>Acinetobacter</i></b></mark>. " +
         "Ampicillin alone has no activity against <i>Acinetobacter</i>, but unfortunately there isn't a commercially " +
         "available version of sulbactam alone (though there is Xacduro [Sulbactam/durlobactam])."
     },
@@ -277,7 +277,7 @@ const ANTIBIOTICS = {
         "<b>CREs</b></mark>) so they should only be used in the sickest of patients. Generally, if a patient has a " +
         "history of ESBL <u>but is immunocompetent and not septic</u>, don't just throw on meropenem without a reason " +
         "(this is how we get CREs). Carbapenem exposure also increase the risk of C diff and other bad infections " +
-        "(e.g. stenotrophomonas).<br><br>"+
+        "(e.g. <mark>stenotrophomonas</mark>).<br><br>"+
         "Carbapenems are also associated with increased risk of seizures, especially in meningitis (and inconveniently " +
         "decrease the levels of valproic acid). Imipenem has the highest risk. Doripenem isn't used as often since it " +
         "has worse outcomes (especially for pneumonia)."
@@ -321,8 +321,8 @@ const ANTIBIOTICS = {
         comments: 'Minocycline is quite similar to doxycycline (see <mark><b>Doxycycline</b></mark> for overview of ' +
         "tetracyclines), but generally has broader activity than doxycycline (exception: doxycycline works better for " +
         "some of the tick-borne & zoonotic diseases). " +
-        'Minocycline has good activity against some of the <mark>"bad bugs"</mark>, namely <i>Stenotrophomonas</i> and ' + 
-        "<i>Acinetobacter</i>. It can have high rates of vestibular side effects (ataxia, vertigo) and turn the skin blue." +
+        'Minocycline has good activity against some of the "bad bugs", namely <mark><i>Stenotrophomonas</i></mark> and ' + 
+        "<mark><i>Acinetobacter</i></mark>. It can have high rates of vestibular side effects (ataxia, vertigo) and turn the skin blue." +
         "<br><br>Trivia fact: Minocycline is technically a disease-modifying antirheumatic drugs (DMARD) for rheumatoid " +
         "arthritis, but please don't use it for that!"
     },
@@ -430,7 +430,7 @@ const ANTIBIOTICS = {
         "<li>Cipro doesn't have as good of gram positive activity (vs levo/moxi)</li>" +
         "<li>Pseudomonas activity: cipro &gt; levo &gt;&gt; moxi</li>" +
         "<li>Moxifloxacin is the only one with anaerobic coverage (but especially intraabdominal)</li>" +
-        "<li>For the <mark><b>Bad bugs</b>:</mark> can <b>sometimes</b> use Levofloxacin (Steno, Acinetobacter) or Cipro (Acinetobacter)</li>" +
+        '<li>For the "bad bugs" can <b>sometimes</b> use Levofloxacin (<mark>Steno, Acinetobacter</mark>) or Cipro (<mark>Acinetobacter</mark>)</li>' +
         "</ul>" +
         "Associated with many side effects: <b>QT prolongation</b>, GI side effects (one of the highest rates of " +
         "<b><i>C diff</i></b>), achilles tendon ruptures, development of <b>aortic aneurysm</b>, worsening of myasthenia " +
@@ -444,8 +444,8 @@ const ANTIBIOTICS = {
             route: "IV/PO", trade: "Bactrim", abbv: "TMP-SMX"
         }},
         abxClass: 'other-abx',
-        comments: 'Bactrim has broad activity against many gram negative infections, including MDR bugs, such as (' +
-        "<i>Stenotrophomonas maltophilia</i>; <mark>see <b>Bad bugs</b></mark>), and Staph infections (including <b>MRSA</b>).<br><br>" +
+        comments: 'Bactrim has broad activity against many gram negative infections, including MDR bugs, such as ' +
+        "<mark><i>Stenotrophomonas maltophilia</i></mark>, and Staph infections (including <b>MRSA</b>).<br><br>" +
         "Monitor renal function on TMP-SMX. It can cause <b>acute kidney injury</b> (AIN or ATN) and <b>hyperkalemia</b> " +
         "(from TMP blocking potassium secretion). Trimethoprim can also increase the serum creatinine independently " +
         "(without affecting the GFR) by competing with creatinine for secretion from the proximal renal tubules. TMP-SMX " +
@@ -515,7 +515,13 @@ const BACTERIA = {
         bugClass: 'GN',
         comments: ''
     },
-    'Others': {
+    'Steno': {
+        name: 'Other notable Enterobacterales',
+        bugExamples: '',
+        bugClass: 'GN',
+        comments: ''
+    },    
+    'CRAB': {
         name: 'Other notable Enterobacterales',
         bugExamples: '',
         bugClass: 'GN',
@@ -569,9 +575,26 @@ const BACTERIA = {
     },
     'anaerobes': {
         name: 'Anaerobes',
-        bugExamples: '',
+        bugExamples: 'Bacteroides, Clostridium, Actinomyces, Prevotella, Peptostreptococci, Fusobacterium',
         bugClass: 'ana',
         comments: ''
+    },
+    'Other': {
+        name: 'Not classified elsewhere / exceptions',
+        bugExamples: '',
+        bugClass: 'other',
+        comments: `
+        <b><i>Staphylococcus saprophyticus</i></b> technically falls under the "Staph other that staph aureus" or "coag
+        negative staph" group, but it behaves differently so I categorized it here. It's a common cause of UTI and is 
+        generally susceptible to most antibiotics used to treat UTIs (except fosfomycin). Treatment optiions include
+        Bactrim, Augmentin, most cepholosporins, and fluoroquinolones.<br><br>
+        
+        <b><i>Neisseria meningitidis</i></b> is an important cause of meningitis (as the name implies). Treatment of 
+        choice is ceftriaxone (ciprofloxacin is used for meningitis prophylaxis).<br><br>
+
+        <b><i>Listeria monocytogenes</i></b> can cause meningitis and bacteremia in immunocompromised hosts. Treatment of 
+        choice is Ampicillin
+        `
     },
     'PNA': {
         name: 'Atypical pneumonias',
