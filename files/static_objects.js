@@ -575,9 +575,25 @@ const BACTERIA = {
     },
     'anaerobes': {
         name: 'Anaerobes',
-        bugExamples: 'Bacteroides, Clostridium, Actinomyces, Prevotella, Peptostreptococci, Fusobacterium',
+        bugExamples: 'Bacteroides, Clostridium, Actinomyces, Peptostreptococci, Prevotella, Fusobacterium',
         bugClass: 'ana',
-        comments: ''
+        comments: `
+        
+        <b><i>Bacteroides</i> spp</b> are gram negative aneaerobes that are found in the colon and female reproductive 
+        tract and are often causitive in intraabdominal abscesses, but can also cause abscesses outside of the abdomen. 
+        
+        <b><i>Clostridium</i> spp</b> are spore forming gram positives that often cause colitis (<i>C difficile</i>) and 
+        gas gangrene (<i>C perfringens</i> and other Clostridium spp). <br><br>
+        
+        <b><i>Actinomyces</i> spp</b> are gram positives that colonize the GI tract that can cause head/neck, thoracic,
+        and abdominal infections. 
+        
+        <b><i>Peptostreptococcus</i></b> are gram positives that can causes chronic sinusitis/otitis media & pelvic 
+        inflammatory disease. 
+        
+        <b><i>Prevotella</i></b> and <b><i>Fusobacterium necrophorum</i></b> are common gram negative causes of 
+        peritonsillar abscesses, and canbe assocaited with internal jugular vein thrombosis (AKA Lemierre syndrome).
+        `
     },
     'Other': {
         name: 'Not classified elsewhere / exceptions',
@@ -623,138 +639,122 @@ const SYNDROMES = {
     'Empiric': {
         name: 'Empiric / Sepsis',
         fullName: 'Empiric treatment for sepsis',
-        comments: "Sepsis is complicated and this tool doesn't take into " + 
-        "account important factors (e.g. immunocompromise, prior " +
-        "micro data, antibiotic exposure)" +
-        "<br><br>" +
-        "This is just a suggestion for bugs that cause " + 
-        "undifferentiated infections and that emperic antibiotics " +
-        "that are often used"
+        comments: `
+        Sepsis is complicated and this tool doesn't take into account important factors (e.g. immunocompromise, prior 
+        micro data, antibiotic exposure)<br><br>
+
+        This is just a suggestion for bugs that cause undifferentiated infections and that emperic antibiotics that are 
+        often used
+        `
     },
     'UTI': {
         name: 'UTI',
         fullName: 'Urinary tract infection',
-        comments: 
-            '<i>Staphylococcus saprophyticus</i> can also cause UTIs. ' +
-            '<i>Staph aureus</i> is <b>not normal</b> in the urine. ' +
-            'If thought to be a true pathogen (not contaminant), you should ' +
-            'suspect hematogenous seeding (e.g. bacteremia, renal abscess).' +
-            '<br><br>' + COMMONTEXT.MDR
+        comments:  `<i>Staphylococcus saprophyticus</i> can also cause UTIs. <i>Staph aureus</i> is <b>not normal</b> 
+        in the urine. If thought to be a true pathogen (not contaminant), you should suspect hematogenous seeding (e.g. 
+        bacteremia, renal abscess).<br><br>` + COMMONTEXT.MDR
     },
     'CAP': {
         name: 'CAP',
         fullName: 'Community acquired pneumonia',
-        comments: COMMONTEXT.PNA + " <mark>Also see <b>HCAP</b></mark>" + 
-        "<br><br>" + COMMONTEXT.aspiration 
+        comments: COMMONTEXT.PNA + " <mark>Also see <b>HCAP</b></mark><br><br>" + COMMONTEXT.aspiration 
     },
     'HAP': {
         name: 'HCAP',
         fullName: 'Pneumonia with risk factors',
-        comments: COMMONTEXT.PNA + " <mark>Also see <b>CAP</b></mark>" + 
-        "<br><br>" + COMMONTEXT.MDR
+        comments: COMMONTEXT.PNA + " <mark>Also see <b>CAP</b></mark><br><br>" + COMMONTEXT.MDR
     },
     'SSTI': {
         name: 'Cellulitis / SSTI',
         fullName: 'Cellulitis and other skin/soft tissue infections',
-        comments: 'Common simple SSTIs include cellulitis, erysipelas, impetigo, ' +
-        "ecthyma, folliculitis, furuncles, carbuncles, and abscesses. " +
-        "Classically, <b>purulent</b> infections are caused by <i>Staph aureus</i> " +
-        "and <b>nonpurulent</b> infections are caused by <i>beta-hemolytic strep</i>. " + 
-        "Abscesses should be drained, in which case they often don't require antibiotics." + 
-        "<br><br>" +   
-        "<b class='text-danger'>Notable exceptions not mentioned here:</b> " +  
-        "<i>Pseudomonas</i> (folliculitis, ecthyma gangrenosum), " +
-        "<i>Vibrio</i> (seawater/seafood, hemorrhagic bullae), " + 
-        "<i>Clostridium</i> (necrotizing fasciitis). " +
-        "Also see <mark><b>foot ulcer</b></mark> for deeper infections and " +
-        "<mark><b>SA / EDA</b></mark> (septic arthritis) if there is concern " +
-        "for joint involvement."
+        comments: `Common simple SSTIs include cellulitis, erysipelas, impetigo, ecthyma, folliculitis, furuncles, 
+        carbuncles, and abscesses. Classically, <b>purulent</b> infections are caused by <i>Staph aureus</i> and 
+        <b>nonpurulent</b> infections are caused by <i>beta-hemolytic strep</i>. Abscesses should be drained, in which 
+        case they often don't require antibiotics.<br><br>
+        
+        <b class='text-danger'>Notable exceptions not mentioned here:</b> <i>Pseudomonas</i> (folliculitis, ecthyma 
+        gangrenosum), <i>Vibrio</i> (seawater/seafood, hemorrhagic bullae), <i>Clostridium</i> (necrotizing fasciitis). 
+        Also see <mark><b>foot ulcer</b></mark> for deeper infections and <mark><b>septic arthritis</b></mark> if there 
+        is concern for joint involvement.
+        `
     },
     'Foot': {
         name: 'Foot ulcer',
         fullName: 'Foot ulcers (with focus on diabetes)',
-        comments: 'This is a complicated topic, but my (oversimplified) approach ' +
-        "is in a stepwise manner: <ol><li>" +
-        "<b>Superficial inflammation: </b>Staph (including MRSA) and strep</li><li>" + 
-        "<b>Fascia involved:</b> Add GNRs (and Psudomonas if they have a history " +
-        "of such or recent antibiotics)</li><li>" + 
-        "<b>Deep tissue involved:</b> Add anaerobes. Also <mark>see " +
-        "<b>osteomyelitis</b></mark> if the bone is involved.</li></ol>" +
-        "It is also paramount to check for peripheral <b>vascular disease</b> " +
-        "as many folks need revascularization (sometimes urgently)." +
-        "<br><br>" +
-        COMMONTEXT.waitCx
+        comments:  `This is a complicated topic, but my (oversimplified) approach is in a stepwise manner: 
+        <ol><li>
+        <b>Superficial inflammation: </b>Staph (including MRSA) and strep
+        </li><li>
+        <b>Fascia involved:</b> Add GNRs (and Psudomonas if they have a history of such or recent antibiotics)
+        </li><li>
+        <b>Deep tissue involved:</b> Add anaerobes. Also <mark>see <b>osteomyelitis</b></mark> if the bone is involved.
+        </li></ol>
+
+        It is also paramount to check for peripheral <b>vascular disease</b> as many folks need revascularization 
+        (sometimes urgently).<br><br>
+        ` + COMMONTEXT.waitCx
     },
     'Osteo': {
         name: 'Osteomyelitis',
         fullName: 'Osteomyelitis',
-        comments: 'This is an oversimplified approach to the <i>most common</i> ' +
-        "casuses of <b class='text-danger'>non-hematogenous</b>, osteomyelitis " + 
-        "<b class='text-info'>in adults</b>. Anaerobes are generally more of a " +
-        "concern is chronic osteo (vs acute). " +
-        "<br><br>" + COMMONTEXT.waitCx +
-        "<br><br>" + COMMONTEXT.MDR + " For chronic OM, there is often drug " +
-        "resistance, making it all the more important to obtain cultures (if " +
-        "able) to guide long term antibiotics." +
-        "<br><br>" +
-        "<b>Good orals:</b> Some antibiotics with decent oral bioavailability " +
-        "and bone penetration are " +
-        "<b class='text-success'>A</b><b>ugmentin</b> (Amoxicillin-clavulanic acid), " +
-        "<b class='text-success'>B</b><b>actrim</b> (TMP-SMX), " +
-        "<b class='text-success'>C</b><b>iprofloxacin</b> (fluoroquinolones generally), " +
-        "<b class='text-success'>D</b><b>oxycycline</b>, and " +
-        "<b class='text-success'>Z</b><b>yvox</b> (linezolid)"
+        comments: `This is an oversimplified approach to the <i>most common</i> casuses of <b class='text-danger'>
+        non-hematogenous</b>, osteomyelitis <b class='text-info'>in adults</b>. Anaerobes are generally more of a concern 
+        in chronic osteo (vs acute). <br><br>` +
+        
+        COMMONTEXT.waitCx + "<br><br>" +
+        COMMONTEXT.MDR + ` For chronic OM, there is often drug resistance, making it all the more important to obtain 
+        cultures (if able) to guide long term antibiotics.<br><br>
+        
+        <b>Good orals:</b> Some antibiotics with decent oral bioavailability and bone penetration are 
+        <b class='text-success'>A</b><b>ugmentin</b> (Amoxicillin-clavulanic acid), 
+        <b class='text-success'>B</b><b>actrim</b> (TMP-SMX), 
+        <b class='text-success'>C</b><b>iprofloxacin</b> (fluoroquinolones generally), 
+        <b class='text-success'>D</b><b>oxycycline</b>, and 
+        <b class='text-success'>Z</b><b>yvox</b> (linezolid)
+        `
     },
     'IAI': {
         name: 'IAI',
         fullName: 'Intra-abdominal infection (bowel flora)',
-        comments: 'Clinical scenerios include secondary peritonitis (bowel ' +
-        "perforation, ischemic bowel, intraabdominal abscess), diverticulitis, " +
-        "ruptured appendix, etc. <b>Anaerobic coverage is a must</b> (for " +
-        "<i>Bacteroides</i> spp., but often polymicrobial) and a " +
-        "<b>surgical consult is indicated</b>. " +
-        "<br><br>" +
-        "Good oral options for uncomplicated cases (e.g. diverticulitis) " +
-        "include a fluoroquinolone (gram negatives) plus metronidazole (Flagyl, " +
-        "for anaerobes). These both have excellent oral bioavailability"
+        comments: `Clinical scenerios include secondary peritonitis (bowel perforation, ischemic bowel, intraabdominal 
+        abscess), diverticulitis, ruptured appendix, etc. <b>Anaerobic coverage is a must</b> (for <i>Bacteroides</i> 
+        spp., but often polymicrobial) and a <b>surgical consult is indicated</b>.<br><br>
+        
+        Good oral options for uncomplicated cases (e.g. diverticulitis) include a fluoroquinolone (gram negatives) plus 
+        metronidazole (Flagyl, for anaerobes). These both have excellent oral bioavailability.
+        `
     },
     'Hepatobiliary': {
         name: 'Hepatobiliary infections',
         fullName: 'Hepatobiliary stuff (cholangitis, cholecystitis, liver abscess)',
-        comments: 'Most common bacteria are enterobacteriaceae (gram negative rods) ' +
-        "enterococcus, and anaerobes (Clostridium and Bacteroides spp). For many " +
-        "of these conditions antibiotics are not definitive therapy, and these " +
-        "folks need some kind of procedural intervention (cholecystectomy, " +
-        "percutaneous drain, ERCP). "
+        comments: `Most common bacteria are enterobacteriaceae (gram negative rods) enterococcus, and anaerobes 
+        (Clostridium and Bacteroides spp). For many of these conditions antibiotics are not definitive therapy, and 
+        these folks need some kind of procedural intervention (cholecystectomy, percutaneous drain, ERCP). `
     },
     'SBP': {
         name: 'SBP',
         fullName: 'Spontaneous bacterial peritonitis',
-        comments: 'Seen in cirrhosis patients with ascites. Diagnostic criteria ' +
-        "&#8805; 250 cells/uL from ascitic fluid. Cultures of ascitic fluid is " +
-        "often negative. Most common treatment is ceftriaxone"
+        comments: `Seen in cirrhosis patients with ascites. Diagnostic criteria &#8805; 250 cells/uL from ascitic fluid. 
+        Cultures of ascitic fluid is often negative even in true infection. Most common treatment is ceftriaxone`
     },
     'Meningitis': {
         name: 'Meningitis',
         fullName: 'Bacterial meningitis (community acquired)',
-        comments: "This covers <b class='text-danger'><u>immunocompetent</u></b> " +
-        "<b class='text-info'>adults</b> with acute <b>bacterial</b> meningitis. " +
-        'Meningitis does not fit well into the "bacteria" schema ' + "I've " +
-        "developed, so please read this text. " +
-        "<br><br>" +
-        "The two most common pathogens <i>Strep. pneumoniae</i> and <i>Neisseria " +
-        "meningitidis</i>. The combo of ceftriaxone and vancomycin cover these " +
-        "two bacteria (vanco is needed for resistant strains of S. pneumoniae). " + 
-        "<i>Listeria monocytogenes</i> should be considered in immunocompromised " +
-        "patients, pregnancy, and older adults (add ampicillin). <b>Dexamethasone</b> " +
-        "should be given 15-20 minutes <b>before the first dose of antibiotics</b>."
+        comments: `This covers <b class='text-danger'><u>immunocompetent</u></b> <b class='text-info'>adults</b> with 
+        acute community acquired <b>bacterial</b> meningitis. Meningitis does not fit well into the "bacteria" schema  
+        I've developed, so please read this text.<br><br>
+
+        The two most common pathogens <i>Strep. pneumoniae</i> and <i>Neisseria meningitidis</i>. The combo of ceftriaxone 
+        and vancomycin cover these two bacteria (vanco is needed for resistant strains of S. pneumoniae). <i>Listeria 
+        monocytogenes</i> should be considered in immunocompromised patients, pregnancy, and older adults (add ampicillin). 
+        <b>Dexamethasone</b> should be given 15-20 minutes <b>before the first dose of antibiotics</b>.
+        `
     },
     'SA': {
         name: 'Septic arthritis',
         fullName: 'Septic arthritis',
-        comments: 'Most common pathogens are Staph aureus, Streptococcus sp., ' +
-        "and gram negative rods. If sexually active, consider <i>Neisseria " +
-        "gonorrhoeae</i>"
+        comments: `Most common pathogens are Staph aureus, Streptococcus sp., and gram negative rods. If sexually 
+        active, consider <i>Neisseria gonorrhoeae</i>`
     }
     
 };
