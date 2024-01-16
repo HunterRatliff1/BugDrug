@@ -56,7 +56,10 @@ const COMMONTEXT = {
     "to obtain cultures before starting antibiotics. If a patient is clincially " +
     "stable (well appearing, non-septic, acceptable vital signs), consider waiting " +
     "until cultures have been obtained to start antibiotics. This is especially " +
-    "important for tissue cultures (osteomyelitis, wounds) of <b>chronic</b> infections. "
+    "important for tissue cultures (osteomyelitis, wounds) of <b>chronic</b> infections. ",
+    susceptibility: `<span class='text-muted'>Antibiotic susceptibility may vary if there has been acquired resistance, 
+    so please inform your choice of antimicrobials based on the patient's current/prior cultures, risk factors, and your 
+    institutional antibiogram</span>`
 };
 
 /******************************************************************************\
@@ -486,20 +489,50 @@ const ANTIBIOTICS = {
  \*****************************************************************************/
 const BACTERIA = {
     'GNR': {
-        name: 'Enterobacterales (gram negative rods)',
-        bugExamples: 'Enterobacterales (gram negative rods)',
+        name: 'Non-resistant Enterobacterales (gut gram negative rods)',
+        bugExamples: `Escherichia, Klebsiella, Proteus, Serratia, Citrobacter, 
+        Morganella, Enterobacter, Providencia, Shigella, Salmonella, Yersinia`,
         bugClass: 'GN',
-        comments: ''
+        comments: `Gram negative bacilli (GNR) can be divided into three broad categories: 
+        <ol><li>
+        <b>Enterobacterales</b> <small class="text-muted">(gut bacteria)</small> <small>But don't let the "gut bacteria" 
+        mislead you, as these bacteria often cause infections outside the gut too!</small>
+        </li><li>
+        <b>Non-enterobacterales</b> <small class="text-muted">(e.g. Bartonella, Vibrio, H flu, Lyme, Legionella, Pasteurella, 
+        Bordetella, Leptospira).</small> <small>Many of these are covered in the <mark>Zoonotic</mark> section, so 
+        ignore them for now</small>
+        </li><li>
+        <b>Non-fermenters</b> <small class="text-muted"> such as <mark>Pseudomonas</mark>, <mark>Stenotrophomonas</mark>, 
+        <mark>Acinetobacter</mark>, and Burkholderia.</small> <small>See their respective sections for details</small>
+        </li></ol>
+
+        When you're first starting out, you can think of most gram negative rods (besides the <mark>AmpC</mark> bugs and 
+        non-fermenters like <mark>Pseudomonas</mark>) as enterobacterales. This section focuses on the enterobacterales 
+        that <b>intrinsically</b> have more <b>favorable</b> resistance patterns. If there is concern for <mark>ESBL or 
+        CRE</mark>, please see those respective sections. <i><small>` + COMMONTEXT.susceptibility + `.</i> <br>
+        
+        <u>Technical note</u>: The label for this category ("Friendly GNR") is a bit of an oversimplification, since it
+        does ignore non-enterobacterales altogether. A more appropriate label would be <b>"enterobacterales at low risk 
+        of inducible AmpC &#946;-lactamase production and without chromosomal/plasmid-mediated resistance"</b> but 
+        that's a little wordy for a tool to teach medical students/interns about antibiotics!</small>`
+
+         
     },
     'PsA': {
         name: 'Pseudomonas aeruginosa (susceptible)',
         bugExamples: '',
         bugClass: 'GN',
-        comments: ''
+        comments: '' +
+        "Falls into the category of nonfermenting gram negative rods"
     },
     'AmpC': {
         name: 'AmpC producers (HECK Yes)',
-        bugExamples: '',
+        bugExamples: 
+            `<b class=text-danger>H</b>afnia alvei, 
+            <b class=text-danger>E</b>nterobacter cloacae,
+            <b class=text-danger>C</b>itrobacter freundii,
+            <b class=text-danger>K</b>lebsiella aerogenes,
+            <b class=text-danger>Ye</b>r<b class=text-danger>s</b>inia enterocolitica`,
         bugClass: 'GN',
         comments: ''
     },
@@ -516,25 +549,25 @@ const BACTERIA = {
         comments: ''
     },
     'Steno': {
-        name: 'Other notable Enterobacterales',
+        name: 'Stenotrophomonas maltophilia',
         bugExamples: '',
         bugClass: 'GN',
         comments: ''
     },    
     'CRAB': {
-        name: 'Other notable Enterobacterales',
-        bugExamples: '',
+        name: 'Acinetobacter Species',
+        bugExamples: 'CRAB = Carbapenem resistant Acinetobacter baumannii',
         bugClass: 'GN',
         comments: ''
     },     
     'MSSA': {
-        name: 'MSSA',
+        name: 'Methicillin-susceptible Staph aureus',
         bugExamples: '',
         bugClass: 'GP',
         comments: ''
     },
     'MRSA': {
-        name: 'MRSA',
+        name: 'Methicillin-resistant Staph aureus',
         bugExamples: '',
         bugClass: 'GP',
         comments: ''
@@ -563,15 +596,25 @@ const BACTERIA = {
     },  
     'VSE': {
         name: 'Vancomycin-sensitive Enterococcus',
-        bugExamples: '',
+        bugExamples: `Often <i>Enterococcus faec<b class="text-success">alis</b></i>, sometimes <i>E faec<b class="text-danger">ium</b></i>`,
         bugClass: 'GP',
-        comments: ''
+        comments: `Enterococcus commonly causes hepatobiliary, urinary, and bloodstream infections. If it's isolated in 
+        the bloodstream there is a good chance they have endocarditis, which can be difficult to treat (it may be a good
+        idea to consult ID, similar to Staph aureus bacteremia).<br><br>
+        
+        <i>E. <b class="text-danger">faecium</b></i> tends to have more resistance than <i>E. <b class="text-success">
+        faecalis</b></i>, but exceptions do occur. ` + COMMONTEXT.susceptibility
     },
     'VRE': {
         name: 'Vancomycin-resistant Enterococcus',
-        bugExamples: '',
+        bugExamples: 'Often <i>Enterococcus faec<b class="text-danger">ium</b></i>, sometimes <i>E faec<b class="text-success">alis</b></i>',
         bugClass: 'GP',
-        comments: ''
+        comments: `Enterococcus commonly causes hepatobiliary, urinary, and bloodstream infections. If it's isolated in 
+        the bloodstream there is a good chance they have endocarditis, which can be difficult to treat (it may be a good
+        idea to consult ID, similar to Staph aureus bacteremia).<br><br>
+        
+        <i>E. <b class="text-danger">faecium</b></i> tends to have more resistance than <i>E. <b class="text-success">
+        faecalis</b></i>, but exceptions do occur. ` + COMMONTEXT.susceptibility
     },
     'anaerobes': {
         name: 'Anaerobes',
