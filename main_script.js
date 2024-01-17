@@ -225,6 +225,9 @@ function addInfoBox(title="", text="", subtitle="") {
  * Implement the code
  \*****************************************************************************/
 $( document ).ready(function() {
+
+    $('#disclaimerModal').modal('show');
+
     // For the bag table, add classes to the parts of the SVG
     $( "#bug-table rect" ).each(function() {
         $( this ).addClass( "bugs" );

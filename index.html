@@ -16,20 +16,29 @@
     <script type="application/javascript" src="./files/static_objects.js"></script>
 
 
+
+
+
     <h1 class="text-center">Title goes here</h1>
     
     
     <div class="container-xxl">
-      <p class="m-2">Intended for adult ID in the US</p>
-      <div class="card m-4" style="width: 450px">
-        <div class="card-header"><b>To do</b></div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">add disclaimer</li>
-          <li class="list-group-item">Expand the strep spp?</li>
-          <li class="list-group-item">Smarted version of they key</li>
-          <li class="list-group-item">Date last changed</li>
-        </ul>
-    </div>
+      <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#disclaimerModal">
+          Terms of service
+        </button>
+        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#contactModal">
+          Contact info (TODO)
+        </button>
+        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#keyModal">
+          Key (TODO)
+        </button>
+        <p>Intended for adult ID in the US</p>
+        <p>Last updated: <mark>XXXX</mark>. For comments, suggestions, corrections, please <mark>XXXXX</mark></p>
+        <p>Copyright Hunter Ratliff © 2023-2024. All rights reserved.</p>
+      </div>
+      </div>
 
       <hr>
         <div class="row">
@@ -65,27 +74,30 @@
                     
                     <!-- Gram negative side --> 
                     
-                    <rect x="000" y="000" width="360" height="100" id="GNR" class="GN" />
-                    <text x="180" y="50" id="GNR-txt" fill="#000000" text-anchor="middle" dominant-baseline="middle">Friendly
+                    <rect x="000" y="000" width="240" height="100" id="GNR" class="GN" />
+                    <text x="120" y="50" id="GNR-txt" fill="#000000" text-anchor="middle" dominant-baseline="middle">Friendly
                     GNR</text>
                     
-                    <rect x="000" y="100" width="180" height="50" id="PsA" class="GN"/>
-                    <text x="90" y="125" id="PsA-txt" fill="#000000">Pseudomonas</text>
-                    
-                    <rect x="180" y="100" width="180" height="50" id="AmpC" class="GN" />
-                    <text x="270" y="125" id="AmpC-txt" fill="#000000">AmpC</text>
-                    
-                    <rect x="000" y="150" width="360" height="50" id="ESBL" class="GN" />
-                    <text x="180" y="175" id="ESBL-txt" fill="#000000">ESBL</text>
-                    
-                    <rect x="000" y="200" width="120" height="40" id="CRE" class="GN" />
-                    <text x="60" y="220" id="CRE-txt" fill="#000000">CRE</text>
+                    <rect x="240" y="000" width="120" height="100" id="PsA" class="GN"/>
+                    <text x="300" y="50" id="PsA-txt" fill="#000000">Pseudomonas</text>
 
-                    <rect x="120" y="200" width="120" height="40" id="Steno" class="GN" />
-                    <text x="180" y="220" id="Steno-txt" fill="#000000">Steno</text>
+                    <rect x="000" y="100" width="180" height="50" id="AmpC" class="GN" />
+                    <text x="90"  y="125" id="AmpC-txt" fill="#000000">AmpC</text>
+                    
+                    <rect x="180" y="100" width="180" height="50" id="ESBL" class="GN" />
+                    <text x="270" y="125" id="ESBL-txt" fill="#000000">ESBL</text>
+                    
+                    <rect x="000" y="150" width="360" height="50" id="CRE" class="GN" />
+                    <text x="180" y="175" id="CRE-txt" fill="#000000">CRE</text>
 
-                    <rect x="240" y="200" width="120" height="40" id="CRAB" class="GN" />
-                    <text x="300" y="220" id="CRAB-txt" fill="#000000">Acinetobacter</text>
+                    <rect x="000" y="200" width="120" height="40" id="Steno" class="GN" />
+                    <text x="60"  y="220" id="Steno-txt" fill="#000000">Steno</text>
+
+                    <rect x="120" y="200" width="120" height="40" id="CRAB" class="GN" />
+                    <text x="180" y="220" id="CRAB-txt" fill="#000000">Acinetobacter</text>
+
+                    <rect x="240" y="200" width="120" height="40" id="DTR" class="GN" />
+                    <text x="300" y="220" id="DTR-txt" fill="#000000">DTR PsA</text>
                     
                     <!-- Gram positive side --> 
                     
@@ -189,6 +201,33 @@
             </div>
           </div>
     </div>
+
+    <!-- Disclaimer Modal: gets called from JS on load -->
+<div class="modal fade" id="disclaimerModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="disclaimerModalLabel">Disclaimer & Terms of Service</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>The information presented here is designed to be a <b>conceptual guide for learners</b> and is 
+          intended for educational purposes only. It is not comprehensive and <b><u>should not be used for 
+            patient care</u></b>. I have made some simplifications that may not apply in every case, and I
+            make no promises that this information will stay up to date. Reliance on any information provided 
+            herein is solely at your own risk. The creator of this tool are not responsible for the accuracy 
+            or completeness of the information.</p>
+        <p>Please consult appropriate reference material or your local ID pharmacist/physician for clinical decision 
+          making (they are probably smarter than me anyways!). Please reach out for any corrections or suggestions.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">I agree</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
