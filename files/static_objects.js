@@ -53,7 +53,7 @@ const COMMONTEXT = {
     "have moved away from anaerobic coverage, <b>unless</b> a lung " +
     "abscess or empyema is suspected.",
     waitCx: "<b>Culture-guided treatment:</b> Whenever possible, it's very helpful " +
-    "to obtain cultures before starting antibiotics. If a patient is clincially " +
+    "to obtain cultures before starting antibiotics. If a patient is clinically " +
     "stable (well appearing, non-septic, acceptable vital signs), consider waiting " +
     "until cultures have been obtained to start antibiotics. This is especially " +
     "important for tissue cultures (osteomyelitis, wounds) of <b>chronic</b> infections. ",
@@ -153,7 +153,7 @@ const ANTIBIOTICS = {
         examples: {"Piperacillin-Tazobactam": {route: "IV", trade:"Zosyn", abbv:"PIP/TZB"}},
         abxClass: 'penicillins',
         comments: 'Has both <b><i>Pseudomonas</i></b> (from piperacillin) and <b>anaerobic</b> coverage, so it can be ' +
-        "ideal for emperic coverage of hospital associations (e.g <mark><b>HCAP</b></mark>) and intraabdominal infections. " +
+        "ideal for empiric coverage of hospital associations (e.g <mark><b>HCAP</b></mark>) and intraabdominal infections. " +
         "It's a weak inducer of AmpC beta-lactamases, but is a good substrate (see <mark><b>AmpC</b></mark> for what " +
         "this means), so it's not ideally for AmpC producing bacteria.<br><br>" +
         "There is some controversy regarding nephrotoxicity when combined with <mark><b>vancomycin</b></mark>. Vanco " +
@@ -185,10 +185,10 @@ const ANTIBIOTICS = {
         fullName: '2nd generation cephalosporins',
         examples: {Cefoxitin: {route: "IV"}},
         abxClass: 'cephalosporins',
-        comments: 'Quite similar to first generations; a little less active for gram-postivie cocci, but begins to ' +
+        comments: 'Quite similar to first generations; a little less active for gram-positive cocci, but begins to ' +
         "have more gram negative coverage (notably <b></i>H influenzae</i></b>). Cefoxitin has some activity against " +
         "anaerobes, including <i>Bacteroides spp</i>, but I wouldn't count on it alone for anaerobic coverage."
-    },
+    }, 
     'CRO': {
         name: 'Ceftriaxone (3G)',
         fullName: '3rd generation cephalosporins',
@@ -207,7 +207,7 @@ const ANTIBIOTICS = {
         fullName: '4th generation cephalosporins',
         examples: {Cefepime: {route: "IV", trade: "Maxipime"}},
         abxClass: 'cephalosporins',
-        comments: 'Broad spectrum antibiotic with activty against <i>Pseudomonas</i> and AmpC beta-lactamases (but not ' +
+        comments: 'Broad spectrum antibiotic with activity against <i>Pseudomonas</i> and AmpC beta-lactamases (but not ' +
         "ESBLs). Lacks anaerobic or MRSA coverage (but does have better MSSA activity the 3rd generation)."
     },
     'CPT': {
@@ -249,7 +249,7 @@ const ANTIBIOTICS = {
         comments: 'Used for <i>Staph aureus</i> (especially MRSA) and Enterococcus (especially vancomycin-resistant ' +
         "<i>E. faecium</i>). Can use it orally since has great bioavailability.<br><br>" +
         "Has risk of <b>serotonin syndrome</b> if given with SSRI/SNRIs since it's a weak MAOI. Will also cause " +
-        "myelospression (reversible) and peripheral neuropathy (irreversible) with long term use."
+        "myelosuppression (reversible) and peripheral neuropathy (irreversible) with long term use."
     },
     'DAP': {
         name: 'Daptomycin',
@@ -314,7 +314,7 @@ const ANTIBIOTICS = {
         "Staph spp., including MRSA (though there can be resistance).<br><br>" +
         "Tetracyclines (like doxy) are also nice because they don't need to be renally dosed. However, while they achieve " +
         "good levels in tissues (e.g. skin, bone, lungs) they don't have very good penetration in the urine, CSF, or " +
-        "bloodstream so shouldn't be relied for UTIs or bactermia."
+        "bloodstream so shouldn't be relied for UTIs or bacteremia."
     },
     'MIN': {
         name: 'Minocycline',
@@ -402,9 +402,12 @@ const ANTIBIOTICS = {
             Tobramycin: {route: "IV"}
         },
         abxClass: 'other-abx',
-        comments: 'Aminoglycosides are used to treat gram negative infections, including <i>Pseudomonas</i>. ' +
-        "Gentamicin can have a synergistic effect for many gram positives (Staph aureus, Enterococcus)<br><br>" +
-        "Aminoglycosides has high rates of <b>nephrotoxicity & ototoxicity</b>, which limits their use in clinical practice"
+        comments: `Aminoglycosides are used to treat gram negative infections, including <i>Pseudomonas</i>. Gentamicin 
+        can have a synergistic effect for many gram positives (Staph aureus, Enterococcus) when used with other 
+        antibiotics (but shouldn't be used for gram positives alone).<br><br>
+        
+        Aminoglycosides has high rates of <b>nephrotoxicity & ototoxicity</b>, which limits their use in clinical practice
+        `
     },
     'AZM': {
         name: 'Azithromycin',
@@ -452,7 +455,7 @@ const ANTIBIOTICS = {
         "Monitor renal function on TMP-SMX. It can cause <b>acute kidney injury</b> (AIN or ATN) and <b>hyperkalemia</b> " +
         "(from TMP blocking potassium secretion). Trimethoprim can also increase the serum creatinine independently " +
         "(without affecting the GFR) by competing with creatinine for secretion from the proximal renal tubules. TMP-SMX " +
-        "also may cause <b>myelosuppresion</b> & ITP, GI side effects, <b>SJS/TEN</b>, and other side effects." +
+        "also may cause <b>myelosuppression</b> & ITP, GI side effects, <b>SJS/TEN</b>, and other side effects." +
         "<br><br>Fun fact: In addition to treating bacterial infections, TMP-SMX has antifungal (<i>Pneumocystis " +
         "jiroveci</i>), antiparasitic (<i>Toxoplasma gondii</i>), and antimycobacterial (<i>Mycobacterium fortuitum</i>) " +
         "activity!"
@@ -529,12 +532,51 @@ const BACTERIA = {
         name: 'AmpC producers (HECK Yes)',
         bugExamples: 
             `<b class=text-danger>H</b>afnia alvei, 
-            <b class=text-danger>E</b>nterobacter cloacae,
-            <b class=text-danger>C</b>itrobacter freundii,
-            <b class=text-danger>K</b>lebsiella aerogenes,
+            <b class=text-danger>E</b><b class="text-info">nterobacter cloacae</b>,
+            <b class=text-danger>C</b><b class="text-info">itrobacter freundii</b>,
+            <b class=text-danger>K</b><b class="text-info">lebsiella aerogenes</b>,
             <b class=text-danger>Ye</b>r<b class=text-danger>s</b>inia enterocolitica`,
         bugClass: 'GN',
-        comments: ''
+        comments: `There are a subset of bacteria that have <b>inducible</b> &#946;-lactamase production, meaning that 
+        when that bacteria is exposed to a beta-lactam antibiotic, it signals for the bacteria to produce the 
+        &#946;-lactamase (this is not to be confused with <i>constitutive</i> production of a &#946;-lactamase at 
+        baseline). This poses a challenge, as the report from the lab might say the culture is susceptible to 
+        ceftriaxone, but once you give the patient ceftriaxone the bacteria begins producing the AmpC &#946;-lactamase 
+        which inactivates ceftriaxone. The bacteria with inducible AmpC production have gone by many mnemonics over the 
+        years (ESCAPPM / SPACE / SPICE), but as of the 2022 IDSA guidelines (for treating AmpC &#946;-lactamase 
+        producing enterobacterales) the most worrisome bacteria in this class are <b><i>Enterobacter cloacae</b></i>, 
+        <b><i>Citrobacter freundii</b></i>, and <b><i>Klebsiella aerogenes</b></i>.<br><br>
+
+        Treatment of invasive infections with these bacteria should either be with cefepime or a carbapenem, as these
+        agents do not heavily induce AmpC production and are more resistant to AmpC beta-lactamases. It's also worth 
+        noting that the "HECK Yes" list doesn't include bacteria that have non-inducible chromosomal AmpC production
+        (e.g. <i>Acinetobacter baumannii</i>), but in these cases the susceptible report from the lab should say that
+        it's resistant to third generation cephalosporins.
+
+        <br><br>
+        <table class="table table-sm">
+        <thead>
+          <tr>
+            <th></th>
+            <th scope="col">Strong Inducer</th>
+            <th scope="col">Weak Inducer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Good substrate </th>
+            <td>Aminopenicillins, 1 &amp; 2nd gen</td>
+            <td>3rd gen, piperacillin, aztreonam</td>
+          </tr>
+          <tr>
+            <th scope="row">Poor substrate</th>
+            <td>Imipenem</td>
+            <td>Cefepime, meropenem</td>
+          </tr>
+        </tbody>
+        </table>
+        Source: <a href="https://www.idstewardship.com/heck-yes-get-amped-updates-ampc-harboring-bacteria/">
+        idstewardship.com's post on AmpC</a>, which adapted from MacDougall. J Pediatr Pharmacol Ther. 2011;16(1):23-30.`
     },
     'ESBL': {
         name: 'Extended-spectrum beta-lactamases',
@@ -564,19 +606,33 @@ const BACTERIA = {
         name: 'Methicillin-susceptible Staph aureus',
         bugExamples: '',
         bugClass: 'GP',
-        comments: ''
+        comments: `Staph aureus causes a variety of infections, including bacteremia/endocarditis, skin & soft tissue 
+        infections, osteomyelitis, septic arthritis, pneumonia, and healthcare associated infections (e.g. CLABI). 
+        Please consult ID for all cases of Staph aureus bacteremia!<br><br>
+        
+        For MSSA, the first line agents for invasive infections (such as bacteremia) are cefazolin or nafcillin. The use
+        of other beta-lactams (like ceftriaxone) has not been well studied and is not advised.`
     },
     'MRSA': {
         name: 'Methicillin-resistant Staph aureus',
         bugExamples: '',
         bugClass: 'GP',
-        comments: ''
+        comments: `Staph aureus causes a variety of infections, including bacteremia/endocarditis, skin & soft tissue 
+        infections, osteomyelitis, septic arthritis, pneumonia, and healthcare associated infections (e.g. CLABI). 
+        Please consult ID for all cases of Staph aureus bacteremia!`
     },
     'SOSA': {
-        name: 'Staph other than Staph aureus',
-        bugExamples: '',
+        name: 'Staphylococcus spp other than Staph aureus',
+        bugExamples: 'S epidermidis, S hominis, S capitis, <b class="text-info">S lugdunensis</b>, S caprae, S haemolyticus, S saprophyticus',
         bugClass: 'GP',
-        comments: ''
+        comments: `Staph other than Staph aureus (SOSA) consist of the <b>coagulase-negative staph (CONS)</b> and <i>
+        Staphylococcus saprophyticus</i> (which is covered under the <mark>Misc</mark> category)<br><br>
+        
+        Generally these common skin flora contaminate blood cultures, but suspect a true infection in cases with the 
+        patient has prosthetic devices/hardware, dialysis catheters (especially peritoneal), or indwelling vascular 
+        lines. These are often methicillin resistant bacteria. <i class="text-info">Staphylococcus lugdunensis</i> is 
+        an exception, as it behaves similar to Staph aureus and can cause severe infections.
+        `
     },  
     'Strep': {
         name: 'Streptococcus spp.',
@@ -622,8 +678,8 @@ const BACTERIA = {
         bugClass: 'ana',
         comments: `
         
-        <b><i>Bacteroides</i> spp</b> are gram negative aneaerobes that are found in the colon and female reproductive 
-        tract and are often causitive in intraabdominal abscesses, but can also cause abscesses outside of the abdomen. 
+        <b><i>Bacteroides</i> spp</b> are gram negative anaerobes that are found in the colon and female reproductive 
+        tract and are often causative in intraabdominal abscesses, but can also cause abscesses outside of the abdomen. 
         
         <b><i>Clostridium</i> spp</b> are spore forming gram positives that often cause colitis (<i>C difficile</i>) and 
         gas gangrene (<i>C perfringens</i> and other Clostridium spp). <br><br>
@@ -635,7 +691,7 @@ const BACTERIA = {
         inflammatory disease. 
         
         <b><i>Prevotella</i></b> and <b><i>Fusobacterium necrophorum</i></b> are common gram negative causes of 
-        peritonsillar abscesses, and canbe assocaited with internal jugular vein thrombosis (AKA Lemierre syndrome).
+        peritonsillar abscesses, and can be associated with internal jugular vein thrombosis (AKA Lemierre syndrome).
         `
     },
     'Other': {
@@ -645,8 +701,8 @@ const BACTERIA = {
         comments: `
         <b><i>Staphylococcus saprophyticus</i></b> technically falls under the "Staph other that staph aureus" or "coag
         negative staph" group, but it behaves differently so I categorized it here. It's a common cause of UTI and is 
-        generally susceptible to most antibiotics used to treat UTIs (except fosfomycin). Treatment optiions include
-        Bactrim, Augmentin, most cepholosporins, and fluoroquinolones.<br><br>
+        generally susceptible to most antibiotics used to treat UTIs (except fosfomycin). Treatment options include
+        Bactrim, Augmentin, most cephalosporins, and fluoroquinolones.<br><br>
         
         <b><i>Neisseria meningitidis</i></b> is an important cause of meningitis (as the name implies). Treatment of 
         choice is ceftriaxone (ciprofloxacin is used for meningitis prophylaxis).<br><br>
@@ -661,7 +717,7 @@ const BACTERIA = {
         bugClass: 'atyp',
         comments: `Atypical pneumonias are called "atypical" because they do not grow well with traditional methods. 
         This is in part because most of these bacteria lack cell walls. <i>C pneumoniae</i> often develops in younger 
-        children, whereas <i>C psittaci</i> is more assocaited with pet birds. <i>Mycoplasma</i> is the classic "walking 
+        children, whereas <i>C psittaci</i> is more associated with pet birds. <i>Mycoplasma</i> is the classic "walking 
         pneumonia and is generally less severe than <i>Legionella</i>.`
     },
     'Zoo': {
