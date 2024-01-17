@@ -742,7 +742,7 @@ const SYNDROMES = {
         Sepsis is complicated and this tool doesn't take into account important factors (e.g. immunocompromise, prior 
         micro data, antibiotic exposure)<br><br>
 
-        This is just a suggestion for bugs that cause undifferentiated infections and that emperic antibiotics that are 
+        This is just a suggestion for bugs that cause undifferentiated infections and that empiric antibiotics that are 
         often used
         `
     },
@@ -784,7 +784,7 @@ const SYNDROMES = {
         <ol><li>
         <b>Superficial inflammation: </b>Staph (including MRSA) and strep
         </li><li>
-        <b>Fascia involved:</b> Add GNRs (and Psudomonas if they have a history of such or recent antibiotics)
+        <b>Fascia involved:</b> Add GNRs (and Pseudomonas if they have a history of such or recent antibiotics)
         </li><li>
         <b>Deep tissue involved:</b> Add anaerobes. Also <mark>see <b>osteomyelitis</b></mark> if the bone is involved.
         </li></ol>
@@ -796,7 +796,7 @@ const SYNDROMES = {
     'Osteo': {
         name: 'Osteomyelitis',
         fullName: 'Osteomyelitis',
-        comments: `This is an oversimplified approach to the <i>most common</i> casuses of <b class='text-danger'>
+        comments: `This is an oversimplified approach to the <i>most common</i> causes of <b class='text-danger'>
         non-hematogenous</b>, osteomyelitis <b class='text-info'>in adults</b>. Anaerobes are generally more of a concern 
         in chronic osteo (vs acute). <br><br>` +
         
@@ -815,7 +815,7 @@ const SYNDROMES = {
     'IAI': {
         name: 'IAI',
         fullName: 'Intra-abdominal infection (bowel flora)',
-        comments: `Clinical scenerios include secondary peritonitis (bowel perforation, ischemic bowel, intraabdominal 
+        comments: `Clinical scenarios include secondary peritonitis (bowel perforation, ischemic bowel, intraabdominal 
         abscess), diverticulitis, ruptured appendix, etc. <b>Anaerobic coverage is a must</b> (for <i>Bacteroides</i> 
         spp., but often polymicrobial) and a <b>surgical consult is indicated</b>.<br><br>
         
