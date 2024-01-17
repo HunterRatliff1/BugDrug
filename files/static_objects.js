@@ -464,7 +464,7 @@ const ANTIBIOTICS = {
         name: 'Nitrofurantoin',
         fullName: '',
         examples: {Nitrofurantoin: {route: "PO", trade: "Macrobid"}},
-        abxClass: 'other-abx',
+        abxClass: 'UTI-abx',
         comments: 'Nitrofurantoin is used to treat <b>uncomplicated</b> urinary tract infections, namely cystitis. It has ' +
         "little activity outside of the bladder, so should <b>not be used for pyelonephritis</b>.<br><br>" +
         "It can also be used for <b>UTI <u>prophylaxis</u></b>, although prolonged use can cause pulmonary fibrosis."
@@ -473,7 +473,7 @@ const ANTIBIOTICS = {
         name: 'Fosfomycin',
         fullName: '',
         examples: {Fosfomycin: {route: "PO"}},
-        abxClass: 'other-abx',
+        abxClass: 'UTI-abx',
         comments: 'In the US, oral fosfomycin is mainly used for UTIs (both complicated and uncomplicated, unlike ' +
         "nitrofurantoin). Elsewhere the IV formulation is available, which has broader uses. It has activity against " +
         "a broad range of bacteria, including gram negative Enterobacteriaceae (including ESBL) and gram positives " +
