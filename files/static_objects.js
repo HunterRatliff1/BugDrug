@@ -482,7 +482,58 @@ const ANTIBIOTICS = {
         "should avoid using fosfomycin as empiric treatment to prevent resistance (there isn't much cross resistance " +
         "with other antibiotics, so it can be a great stepdown from carbapenems for MDR complicated UTIs). Similarly, " +
         "always use cultures to guide your therapy, as there can be resistance to fosfomycin."
+    } /*,
+    'Vabomere': {
+        name: 'Vabomere &trade;',
+        fullName: '',
+        examples: {"Meropenem-Vaborbactam": {route: "IV", trade:"Vabomere", abbv:"MEM/VAB"}},
+        abxClass: '', // carbapenems
+        comments: ``
+    },
+    'Recarbrio': {
+        name: 'Recarbrio &trade;',
+        fullName: '',
+        examples: {"Imipenem-Cilastatin-Relebactam": {route: "IV", trade:"Recarbrio", abbv:"IPM/CLN/REL"}},
+        abxClass: '', // carbapenems
+        comments: ``
+    },
+    'Zerbaxa': {
+        name: 'Zerbaxa ',
+        fullName: '',
+        examples: {"Ceftolozane-Tazobactam": {route: "IV", trade:"Zerbaxa", abbv:"C/T"}},
+        abxClass: '', // cephalosporins
+        comments: ``
+    },
+    'Avycaz': {
+        name: 'Avycaz &trade;',
+        fullName: '',
+        examples: {"Ceftazidime-Avibactam": {route: "IV", trade:"Avycaz", abbv:"CAZ/AVI"}},
+        abxClass: '', // cephalosporins
+        comments: ``
+    },
+    'Cefiderocol': {
+        name: 'Cefiderocol',
+        fullName: '',
+        examples: {"Cefiderocol": {route: "IV", trade:"Fetroja", abbv:"FDC"}},
+        abxClass: '', // cephalosporins
+        comments: ``
+    },
+    'Eravacycline': {
+        name: 'Eravacycline',
+        fullName: '',
+        examples: {Eravacycline: {route: "IV", trade:"Xerava"}},
+        abxClass: '', // tetracyclines
+        comments: ``
+    },
+    'Xacduro': {
+        name: 'Xacduro &trade;',
+        fullName: '',
+        examples: {"Sulbactam-Durlobactam": {route: "IV", trade:"Xacduro"}},
+        abxClass: '', // penicillins
+        comments: ``
     }
+    */
+
 
     
 };
@@ -509,10 +560,11 @@ const BACTERIA = {
         <mark>Acinetobacter</mark>, and Burkholderia.</small> <small>See their respective sections for details</small>
         </li></ol>
 
-        When you're first starting out, you can think of most gram negative rods (besides the <mark>AmpC</mark> bugs and 
-        non-fermenters like <mark>Pseudomonas</mark>) as enterobacterales. This section focuses on the enterobacterales 
-        that <b>intrinsically</b> have more <b>favorable</b> resistance patterns. If there is concern for <mark>ESBL or 
-        CRE</mark>, please see those respective sections. <i><small>` + COMMONTEXT.susceptibility + `.</i> <br>
+        When you're first starting out, you can think of the <b>majority of gram negative rods as enterobacterales</b> 
+        and focus on learning the "exceptions" (like <mark>Pseudomonas</mark>) . This section focuses on the 
+        enterobacterales that <b>intrinsically</b> have more <b>favorable</b> resistance patterns. If there is concern 
+        for <mark>ESBL or CRE</mark>, please see those respective sections. <i><small>` + 
+        COMMONTEXT.susceptibility + `.</i> <br>
         
         <u>Technical note</u>: The label for this category ("Friendly GNR") is a bit of an oversimplification, since it
         does ignore non-enterobacterales altogether. A more appropriate label would be <b>"enterobacterales at low risk 
@@ -550,7 +602,7 @@ const BACTERIA = {
         Treatment of invasive infections with these bacteria should either be with cefepime or a carbapenem, as these
         agents do not heavily induce AmpC production and are more resistant to AmpC beta-lactamases. It's also worth 
         noting that the "HECK Yes" list doesn't include bacteria that have non-inducible chromosomal AmpC production
-        (e.g. <i>Acinetobacter baumannii</i>), but in these cases the susceptible report from the lab should say that
+        (e.g. <i>Acinetobacter baumannii</i>), but in these cases the susceptibility report from the lab should say that
         it's resistant to third generation cephalosporins.
 
         <br><br>
@@ -580,9 +632,19 @@ const BACTERIA = {
     },
     'ESBL': {
         name: 'Extended-spectrum beta-lactamases',
-        bugExamples: '',
+        bugExamples: 'ESBL E coli, ESBL Klebsiella, ESBL Proteus',
         bugClass: 'GN',
-        comments: ''
+        comments: `Moving up in the spectrum of "gram negative badness" we reach gram negative bacteria that produce 
+        extended-spectrum beta-lactamases (ESBLs). <b>ESBLs are enzymes that inactivate most penicillins, cephalosporins, 
+        and aztreonam</b>. The most common ESBL enzymes in the US (<b>CTX-M</b>) does not affect carbapenems nor 
+        non-&#946;-lactam antibiotics <small class='text-muted'>(e.g. TMP-SMX, fluoroquinolones, fosfomycin [for E coli
+        UTI only]; </small><small>keep in mind the same risk factors that made the patient develop an ESBL means these   
+        antibiotics may not be effective either)</small>.<br><br>
+        
+        Any gram negative can  harbor ESBL genes; however, they are most prevalent in Escherichia coli, Klebsiella 
+        pneumoniae, Klebsiella oxytoca, and Proteus mirabilis. See section 1 of the 
+        <a href="https://doi.org/10.1093/cid/ciad527">2023 IDSA Guidance on the Treatment of Antimicrobial Resistant 
+        Gram-Negative Infections</a> for treatment details.`
     },
     'CRE': {
         name: 'Carbapenem-resistant Enterobacterales',
