@@ -488,49 +488,50 @@ const ANTIBIOTICS = {
         "should avoid using fosfomycin as empiric treatment to prevent resistance (there isn't much cross resistance " +
         "with other antibiotics, so it can be a great stepdown from carbapenems for MDR complicated UTIs). Similarly, " +
         "always use cultures to guide your therapy, as there can be resistance to fosfomycin."
-    } , /*
+    } , 
+    /***  Extended spectrum
+     * Vabomere      Meropenem-Vaborbactam
+     * Recarbrio     Imipenem-Cilastatin-Relebactam
+     * Zerbaxa       Ceftolozane-Tazobactam
+     * Avycaz        Ceftazidime-Avibactam
+     * Cefiderocol     
+     *  
+    ***/
     'Vabomere': {
         name: 'Vabomere &trade;',
         fullName: '',
         examples: {"Meropenem-Vaborbactam": {route: "IV", trade:"Vabomere", abbv:"MEM/VAB"}},
-        abxClass: '', // carbapenems
+        abxClass: 'extended', // carbapenems
         comments: ``
     },
     'Recarbrio': {
         name: 'Recarbrio &trade;',
         fullName: '',
         examples: {"Imipenem-Cilastatin-Relebactam": {route: "IV", trade:"Recarbrio", abbv:"IPM/CLN/REL"}},
-        abxClass: '', // carbapenems
+        abxClass: 'extended', // carbapenems
         comments: ``
     },
     'Zerbaxa': {
         name: 'Zerbaxa ',
         fullName: '',
         examples: {"Ceftolozane-Tazobactam": {route: "IV", trade:"Zerbaxa", abbv:"C/T"}},
-        abxClass: '', // cephalosporins
+        abxClass: 'extended', // cephalosporins
         comments: ``
     },
     'Avycaz': {
         name: 'Avycaz &trade;',
         fullName: '',
         examples: {"Ceftazidime-Avibactam": {route: "IV", trade:"Avycaz", abbv:"CAZ/AVI"}},
-        abxClass: '', // cephalosporins
+        abxClass: 'extended', // cephalosporins
         comments: ``
     },
     'Cefiderocol': {
         name: 'Cefiderocol',
         fullName: '',
         examples: {"Cefiderocol": {route: "IV", trade:"Fetroja", abbv:"FDC"}},
-        abxClass: '', // cephalosporins
+        abxClass: 'extended', // cephalosporins
         comments: ``
     },
-    'Eravacycline': {
-        name: 'Eravacycline',
-        fullName: '',
-        examples: {Eravacycline: {route: "IV", trade:"Xerava"}},
-        abxClass: '', // tetracyclines
-        comments: ``
-    },*/
     'Xacduro': {
         name: 'Xacduro &trade;',
         fullName: '',
