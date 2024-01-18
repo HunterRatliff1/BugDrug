@@ -10,11 +10,11 @@
  *                 (i.e. array of arrays)
  *   2. transpose: Optional function which transposes the matrix. This prevents
  *                 you from needing to define the same relationship twice (i.e.
- *                 say that vanco treats MRSA in one file, and in a seperate 
+ *                 say that vanco treats MRSA in one file, and in a separate 
  *                 file also say that MRSA is treated with vanc)
  *   3. toJSON:    Converts the matrix into JSON format
  * 
- * Unfortunatly CORS (cross origin requests) don't make it easy to read in the
+ * Unfortunately CORS (cross origin requests) don't make it easy to read in the
  * CSV file directly, so in order to make this more portable and reliable across
  * browsers (and easier to debug), the CSV string is hard coded into the file.
  * To update it, open the CSV file in a file editor (as a text file) and copy 
@@ -255,33 +255,34 @@ SA,com,occ,,,,,,,com,com,,com,,,,,,
 
 const CSV_ANTIBIOTICS = `
 Bug-abx,GNR,PsA,AmpC,ESBL,CRE,Steno,CRAB,DTR,MSSA,MRSA,SOSA,Strep,VRE,VSE,anaerobes,Other,PNA,Zoo
-NAF,,,,,,,,,good,bad,some,good,,,,,,
-AMP,,,bad,,,,,,some,bad,some,good,some,some,,note,,
-Unasyn,some,,bad,,,,note,,some,bad,some,good,some,some,good,,,
-Augmentin,some,,bad,,,,,,some,bad,some,good,some,some,good,,,
-Zosyn,good,good,bad,,,,,,some,bad,some,good,some,some,good,,,
-CFZ,some,,bad,,,,,,good,bad,some,good,bad,bad,,,,
-FOX,some,,bad,,,,,,some,bad,bad,some,bad,bad,some,,,
-CRO,good,bad,bad,bad,bad,,,,some,bad,,some,bad,bad,,note,,
-FEP,good,good,some,bad,bad,,,,good,bad,,good,bad,bad,,,,
-CPT,some,bad,bad,,,,,,good,good,good,good,bad,bad,,,,
+NAF,,,,,,bad,,,good,bad,some,good,,,,,,
+AMP,,,bad,,,bad,,,some,bad,some,good,some,some,,note,,
+Unasyn,some,,bad,,,bad,note,,some,bad,some,good,some,some,good,,,
+Augmentin,some,,bad,,,bad,,,some,bad,some,good,some,some,good,,,
+Zosyn,good,good,bad,,,bad,,,some,bad,some,good,some,some,good,,,
+CFZ,some,,bad,,,bad,,,good,bad,some,good,bad,bad,,,,
+FOX,some,,bad,,,bad,,,some,bad,bad,some,bad,bad,some,,,
+CRO,good,bad,bad,bad,bad,bad,,,some,bad,,some,bad,bad,,note,,
+FEP,good,good,some,bad,bad,bad,,,good,bad,,good,bad,bad,,,,
+CPT,some,bad,bad,,,bad,,,good,good,good,good,bad,bad,,,,
 VAN,,,,,,,,,broad,good,good,broad,bad,good,,,,
 LZD,,,,,,,,,broad,good,good,broad,good,broad,,,,
 DAP,,,,,,,,,broad,good,good,broad,good,broad,,,,
-MEM,broad,good,good,good,bad,,some,,good,bad,,good,,,good,,,
+MEM,broad,good,good,good,bad,bad,some,some,good,bad,,good,,,good,,,
 ETP,broad,bad,good,good,bad,bad,bad,,good,bad,,good,,,good,,,
 DOX,some,,,,,some,some,,good,good,some,some,,,,,good,good
-MIN,some,,,,,good,good,,good,good,some,some,,,,,good,some
+MIN,some,,,,,good,some,,good,good,some,some,,,,,good,some
 TGC,broad,bad,good,good,good,some,some,,broad,broad,broad,broad,,,some,,broad,broad
 MTZ,,,,,,,,,,,,,,,good,,,
 CLI,,,,,,,,,some,some,some,some,,,good,,,
-ATM,good,good,bad,,,,,,,,,,,,,,,
-Aminogly,good,good,good,some,some,,,,note,note,note,note,note,note,,,,
+ATM,good,good,bad,,,note,,,,,,,,,,,,
+Aminogly,good,good,good,some,some,bad,,,note,note,note,note,note,note,,,,
 AZM,,,,,,,,,,,,,,,,,good,
 Quino,good,some,good,some,,some,some,,some,,,some,,,some,note,good,
-TMPSMX,good,,good,some,,some,some,,good,good,good,,,,,note,,
-NIT,good,,,some,some,,,,,,,,good,good,,,,
-FOF,good,some,some,some,some,,,,,,,,some,some,,bad,,
+TMPSMX,good,,good,some,,good,some,,good,good,good,,,,,note,,
+NIT,good,,,some,some,bad,,,,,,,good,good,,,,
+FOF,good,some,some,some,some,bad,,,,,,,some,some,,bad,,
+Xacduro,,,,,,,good,,,,,,,,,,,
 `;
 
 /*

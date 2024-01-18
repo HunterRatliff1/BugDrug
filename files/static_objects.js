@@ -423,6 +423,23 @@ const ANTIBIOTICS = {
         'so used for the pro-motility "side effects"; however, it ' + "shouldn't be used for more than 2 weeks since it " +
         "down-regulates motilin receptors. Finally there are many drug-drug interactions, especially with cardiac medications"
     },
+    'TMPSMX': {
+        name: 'Bactrim',
+        fullName: '',
+        examples: {"Trimethoprim-sulfamethoxazole": {
+            route: "IV/PO", trade: "Bactrim", abbv: "TMP-SMX"
+        }},
+        abxClass: 'other-abx',
+        comments: 'Bactrim has broad activity against many gram negative infections, including MDR bugs, such as ' +
+        "<mark><i>Stenotrophomonas maltophilia</i></mark>, and Staph infections (including <b>MRSA</b>).<br><br>" +
+        "Monitor renal function on TMP-SMX. It can cause <b>acute kidney injury</b> (AIN or ATN) and <b>hyperkalemia</b> " +
+        "(from TMP blocking potassium secretion). Trimethoprim can also increase the serum creatinine independently " +
+        "(without affecting the GFR) by competing with creatinine for secretion from the proximal renal tubules. TMP-SMX " +
+        "also may cause <b>myelosuppression</b> & ITP, GI side effects, <b>SJS/TEN</b>, and other side effects." +
+        "<br><br>Fun fact: In addition to treating bacterial infections, TMP-SMX has antifungal (<i>Pneumocystis " +
+        "jiroveci</i>), antiparasitic (<i>Toxoplasma gondii</i>), and antimycobacterial (<i>Mycobacterium fortuitum</i>) " +
+        "activity!"
+    },
     'Quino': {
         name: 'Fluoroquinolones',
         fullName: 'Fluoroquinolones',
@@ -442,23 +459,6 @@ const ANTIBIOTICS = {
         "<b><i>C diff</i></b>), achilles tendon ruptures, development of <b>aortic aneurysm</b>, worsening of myasthenia " +
         "gravis (to name a few)"
         
-    },
-    'TMPSMX': {
-        name: 'Bactrim',
-        fullName: '',
-        examples: {"Trimethoprim-sulfamethoxazole": {
-            route: "IV/PO", trade: "Bactrim", abbv: "TMP-SMX"
-        }},
-        abxClass: 'other-abx',
-        comments: 'Bactrim has broad activity against many gram negative infections, including MDR bugs, such as ' +
-        "<mark><i>Stenotrophomonas maltophilia</i></mark>, and Staph infections (including <b>MRSA</b>).<br><br>" +
-        "Monitor renal function on TMP-SMX. It can cause <b>acute kidney injury</b> (AIN or ATN) and <b>hyperkalemia</b> " +
-        "(from TMP blocking potassium secretion). Trimethoprim can also increase the serum creatinine independently " +
-        "(without affecting the GFR) by competing with creatinine for secretion from the proximal renal tubules. TMP-SMX " +
-        "also may cause <b>myelosuppression</b> & ITP, GI side effects, <b>SJS/TEN</b>, and other side effects." +
-        "<br><br>Fun fact: In addition to treating bacterial infections, TMP-SMX has antifungal (<i>Pneumocystis " +
-        "jiroveci</i>), antiparasitic (<i>Toxoplasma gondii</i>), and antimycobacterial (<i>Mycobacterium fortuitum</i>) " +
-        "activity!"
     },
     'NIT': {
         name: 'Nitrofurantoin',
@@ -482,7 +482,7 @@ const ANTIBIOTICS = {
         "should avoid using fosfomycin as empiric treatment to prevent resistance (there isn't much cross resistance " +
         "with other antibiotics, so it can be a great stepdown from carbapenems for MDR complicated UTIs). Similarly, " +
         "always use cultures to guide your therapy, as there can be resistance to fosfomycin."
-    } /*,
+    } , /*
     'Vabomere': {
         name: 'Vabomere &trade;',
         fullName: '',
@@ -524,15 +524,19 @@ const ANTIBIOTICS = {
         examples: {Eravacycline: {route: "IV", trade:"Xerava"}},
         abxClass: '', // tetracyclines
         comments: ``
-    },
+    },*/
     'Xacduro': {
         name: 'Xacduro &trade;',
         fullName: '',
         examples: {"Sulbactam-Durlobactam": {route: "IV", trade:"Xacduro"}},
-        abxClass: '', // penicillins
-        comments: ``
+        abxClass: 'penicillins', // penicillins
+        comments: `Sulbactam-Durlobactam is a novel combination of two beta-lactamase inhibitors, sulbactam (which has 
+        antibacterial activity against <i>Acinetobacter</i>) and durlobactam (which prevents the breakdown of sulbactam). 
+        It's only current use is for treatment of infections with <mark><i>Acinetobacter baumannii</i></mark>.<br><br>
+        
+        Technically this doesn't fall under the category of penicillins since it's only contains beta-lactams`
     }
-    */
+    
 
 
     
@@ -570,15 +574,20 @@ const BACTERIA = {
         does ignore non-enterobacterales altogether. A more appropriate label would be <b>"enterobacterales at low risk 
         of inducible AmpC &#946;-lactamase production and without chromosomal/plasmid-mediated resistance"</b> but 
         that's a little wordy for a tool to teach medical students/interns about antibiotics!</small>`
-
-         
     },
     'PsA': {
         name: 'Pseudomonas aeruginosa (susceptible)',
         bugExamples: '',
         bugClass: 'GN',
-        comments: '' +
-        "Falls into the category of nonfermenting gram negative rods" +
+        comments: `Pseudomonas is a <b>nonfermenting gram negative rod</b> that can cause a variety of infections in 
+        both immunocompetent and immunocompromised patients. Treatment options include <b>antipseudomonal penicillins</b> 
+        (piperacillin-tazobactam; Zosyn), some <b>cephalosporins</b> (ceftazidime & cefepime), <b>aztreonam</b>, some
+        <b>carbapenems</b> (meropenem & imipenem-cilastatin; ertapenem won't work), and <b>fluoroquinolones</b> 
+        (ciprofloxacin & levofloxacin).<br><br>
+        
+        This section focuses on strains of Pseudomonas that are generally susceptible to the above antibiotics. Because 
+        <i>Pseudomonas</i> can have a variety of resistance mechanisms, please see <mark>DTR PsA</mark> for strains of 
+        Pseudomonas that have resistance.<br><br>` +
         COMMONTEXT.susceptibility 
     },
     'AmpC': {
@@ -697,10 +706,18 @@ const BACTERIA = {
         (Sulbactam-Durlobactam); the durlobactam prevents degradation of sulbactam.`
     },     
     'DTR': {
-        name: 'Difficult-to-treat Pseudomonas aeruginosa',
+        name: 'Difficult-to-Treat Resistance Pseudomonas aeruginosa',
         bugExamples: '',
         bugClass: 'GN',
-        comments: ''
+        comments: `As with all of the multidrug-resistant nonfermenting GNRs, using cultures (and an ID consult) are 
+        paramount for treatment. For empiric therapy of DTR-PsA (see note on terminology below), <b>Zerbaxa</b> 
+        (ceftolozane-tazobactam) is a reasonable option. Other options include Avycaz (ceftazidime-avibactam), Recarbrio 
+        (imipenem-cilastatin-relebactam), or cefiderocol, depending on the mechanism of resistance.<br><br>
+        
+        <u>Note on terminology</u>: the 2023 IDSA guidelines define multidrug-resistant (MDR) Pseudomonas as an isolate 
+        that is resistant to at least one antibiotic in three of the five following antibiotic classes: penicillins,  
+        cephalosporins, fluoroquinolones, aminoglycosides, and carbapenems. DTR is an isolate that is resistant to all 
+        antibiotics in all five classes.`
     },   
     'MSSA': {
         name: 'Methicillin-susceptible Staph aureus',
