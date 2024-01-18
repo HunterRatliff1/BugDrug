@@ -332,14 +332,20 @@ const ANTIBIOTICS = {
     'TGC': {
         name: 'Tigecycline',
         fullName: '',
-        examples: {Tigecycline: {route: "IV", trade: "Tygacil"}},
+        examples: {
+            Tigecycline: {route: "IV", trade: "Tygacil"},
+            Eravacycline: {route: "IV", trade: "Xerava"}
+        },
         abxClass: 'tetracyclines',
-        comments: "If you see ID using tigecycline, it's an indicator that things probably aren't going great. Despite " +
-        "tigecycline's broad activity (CRE, <i>Acinetobacter</i>, <i>Stenotrophomonas</i>), it's often not the best " +
-        "option for the patient; randomized trials have shown <b>increased mortality and higher rates of failure</b> for " +
-        "tigecycline vs other antibiotics. It therefore has a <b>black box warning</b> and the FDA advises us to " +
-        'only use Tigecycline "in situations when alternative treatments are not suitable". It also has high rates of ' +
-        "GI side effects. Finally, despite it's broad activity, it <b>lacks Pseudomonas coverage</b>. "
+        comments: `If you see ID using tigecycline, it's an indicator that things probably aren't going great. Despite 
+        tigecycline's broad activity (CRE, <i>Acinetobacter</i>, <i>Stenotrophomonas</i>), it's often not the best 
+        option for the patient; randomized trials have shown <b>increased mortality and higher rates of failure</b> for 
+        tigecycline vs other antibiotics. It therefore has a <b>black box warning</b> and the FDA advises us to 
+        only use Tigecycline "in situations when alternative treatments are not suitable". It also has high rates of 
+        GI side effects. Finally, despite it's broad activity, it <b>lacks Pseudomonas coverage</b>.<br><br>
+
+        <b>Eravacycline</b> is similar to tigecycline, but perhaps has fewer side effects. It's mainly used for 
+        intra-abdominal infections.`
     },
 
     /***  anaerobic-abx
