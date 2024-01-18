@@ -578,7 +578,8 @@ const BACTERIA = {
         bugExamples: '',
         bugClass: 'GN',
         comments: '' +
-        "Falls into the category of nonfermenting gram negative rods"
+        "Falls into the category of nonfermenting gram negative rods" +
+        COMMONTEXT.susceptibility 
     },
     'AmpC': {
         name: 'AmpC producers (HECK Yes)',
@@ -644,26 +645,63 @@ const BACTERIA = {
         Any gram negative can  harbor ESBL genes; however, they are most prevalent in Escherichia coli, Klebsiella 
         pneumoniae, Klebsiella oxytoca, and Proteus mirabilis. See section 1 of the 
         <a href="https://doi.org/10.1093/cid/ciad527">2023 IDSA Guidance on the Treatment of Antimicrobial Resistant 
-        Gram-Negative Infections</a> for treatment details.`
+        Gram-Negative Infections</a> for treatment details. Finally, it's important to distinguish colonization from 
+        true infection (which can be challenging)`
     },
     'CRE': {
-        name: 'Carbapenem-resistant Enterobacterales',
+        name: 'Carbapenem-Resistant Enterobacterales',
         bugExamples: '',
         bugClass: 'GN',
-        comments: ''
+        comments: `Carbapenem-resistant (CR) enterobacterales are, as the name implies, resistant to carbapenems (for 
+        carbapenem-resistant Pseudomonas, see <mark>DTR PsA</mark>). Though not all CR is mediated via carbapenemase
+        production, the most common carbapenemases in the United States are <b>KPCs</b> (Kleb pneumo carbapenemases,  
+        which don't exclusively occur in <i>K. pneumoniae</i>); others include NDMs, OXA-48s, VIMs, and IMPs.<br><br>
+        
+        At this point you're running out of antibiotics and  probably have already reached out to the infectious diseases 
+        team. For KPC producing CRE (Ambler class A), <b>Vabomere</b> (Meropenem-Vaborbactam) is an ideal choice 
+        <small>(preferred over Avycaz [Ceftazidime-Avibactam] since you're saving the Ambler class D activity)</small>.`
     },
     'Steno': {
-        name: 'Stenotrophomonas maltophilia',
+        name: 'Stenotrophomonas maltophilia ("steno")',
         bugExamples: '',
         bugClass: 'GN',
-        comments: ''
+        comments: `Stenotrophomonas is one of the "nonfermenting GNRs" that can be challenging to treat. It has
+        an <b>impressive amount of intrinsic resistance</b>: chromosomal beta-lactamases hydrolyzes penicillins, 
+        cephalosporins, aztreonam, and carbapenems (oh and chromosomal resistance to aminoglycosides). This leaves you 
+        with Bactrim, fluoroquinolones, and tetracyclines (at baseline), and this is assuming that it hasn't developed 
+        efflux pumps to take these off of the table.<br><br>
+
+        <b>There is no standard of care</b> treatment (please call ID). Therapy should be guided by cultures (and often 
+        use combination therapy). The best empiric agents are <b>tetracyclines</b> (mino, tige) and <b>Bactrim</b>. 
+        Additionally, although steno can cause severe infections, it can sometimes be a colonizing organism and not 
+        implicated in a true infection.
+        
+        <br><br>Note: In theory, the combination of ceftazidime-avibactam and aztreonam can be used. Avibactam blocks 
+        the L2 serine BL from hydrolyzing aztreonam (see question 6.6 of the 2023 IDSA guidelines).`
     },    
     'CRAB': {
         name: 'Acinetobacter Species',
-        bugExamples: 'CRAB = Carbapenem resistant Acinetobacter baumannii',
+        bugExamples: 'CRAB = Carbapenem resistant <i>Acinetobacter baumannii</i>',
+        bugClass: 'GN',
+        comments: `Acinetobacter is a difficult to treat nosocomial opportunistic infection that can cause HCAP, SSTI/wound
+        infections/osteomyelitis, UTIs, meningitis, bacteremia, and more. It is one of the most resistant bacteria (along 
+        with the other nonfermenting GNRs), and <b>does not have a standard of care</b>.<br><br>
+        
+        Therapy should be guided by cultures. In cases where there is susceptibility to cefepime or meropenem, those 
+        agents should be used. In carbapenem resistant <i>Acinetobacter baumannii</i> (<b>CRAB</b>), potential agents
+        include cefiderocol, minocycline/tigecycline (not for bacteremia), imipenem-cilastatin, fluoroquinolones, and
+        sulbactam (see below).<br><br>
+        
+        Sulbactam has unique activity against Acinetobacter, so you can use <b>high dose Unasyn</b> (ampicillin has no 
+        activity, you're just using it for the sulbactam). You may also use the double beta-lactamase inhibitor, Xacduro 
+        (Sulbactam-Durlobactam); the durlobactam prevents degradation of sulbactam.`
+    },     
+    'DTR': {
+        name: 'Difficult-to-treat Pseudomonas aeruginosa',
+        bugExamples: '',
         bugClass: 'GN',
         comments: ''
-    },     
+    },   
     'MSSA': {
         name: 'Methicillin-susceptible Staph aureus',
         bugExamples: '',
