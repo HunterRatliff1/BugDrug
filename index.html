@@ -28,18 +28,18 @@
         <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#disclaimerModal">
           Terms of service
         </button>
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#keyModal">
+          Key
+        </button>
         <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#contactModal">
           Contact info (TODO)
         </button>
-        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#keyModal">
-          Key (TODO)
-        </button>
-        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#keyModal">
+        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#linkModal">
           Helpful links (TODO)
         </button>
         <p>Intended for adult ID in the US</p>
-        <p>Last updated: <mark>XXXX</mark>. For comments, suggestions, corrections, please <mark>XXXXX</mark></p>
-        <p>Copyright Hunter Ratliff © 2023-2024. All rights reserved.</p>
+        <p>Last updated: <mark>2024-01-18</mark>. For comments, suggestions, corrections, please see the contact info 
+          link above. Copyright Hunter Ratliff © 2023-2024. All rights reserved.</p>
       </div>
       </div>
 
@@ -205,32 +205,85 @@
           </div>
     </div>
 
-    <!-- Disclaimer Modal: gets called from JS on load -->
-<div class="modal fade" id="disclaimerModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="disclaimerModalLabel">Disclaimer & Terms of Service</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>The information presented here is designed to be a <b>conceptual guide for learners</b> and is 
-          intended for educational purposes only. It is not comprehensive and <b><u>should not be used for 
-            patient care</u></b>. I have made some simplifications that may not apply in every case, and I
-            make no promises that this information will stay up to date. Reliance on any information provided 
-            herein is solely at your own risk. The creator of this tool are not responsible for the accuracy 
-            or completeness of the information.</p>
-        <p>Please consult appropriate reference material or your local ID pharmacist/physician for clinical decision 
-          making (they are probably smarter than me anyways!). Please reach out for any corrections or suggestions.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">I agree</button>
+  <!-- Disclaimer Modal: gets called from JS on load -->
+  <div class="modal fade" id="disclaimerModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="disclaimerModalLabel">Disclaimer & Terms of Service</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>The information presented here is designed to be a <b>conceptual guide for learners</b> and is 
+            intended for educational purposes only. It is not comprehensive and <b><u>should not be used for 
+              patient care</u></b>. I have made some simplifications that may not apply in every case, and I
+              make no promises that this information will stay up to date. Reliance on any information provided 
+              herein is solely at your own risk. The creator of this tool are not responsible for the accuracy 
+              or completeness of the information.</p>
+          <p>Please consult appropriate reference material or your local ID pharmacist/physician for clinical decision 
+            making (they are probably smarter than me anyways!). Please reach out for any corrections or suggestions.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">I agree</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <!-- Key Modal -->
+  <div class="modal fade" id="keyModal" tabindex="-1" role="dialog" aria-labelledby="keyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="keyModalLabel">Key</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          These are general
+          <div class="row">
+            <div class="col">
+              <div class="card my-2">
+                <div class="card-header">
+                  <b>Syndrome-Bug Relationship:</b> 
+                  How commonly will you see these bugs in this syndrome? 
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item com">Common association</li>
+                  <li class="list-group-item occ">Occasional association</li>
+                  <li class="list-group-item note">See notes for details</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card my-2">
+                <div class="card-header">
+                  <b>Antibiotic-Bug Relationship:</b>
+                  How good of coverage does this antibiotic have for these bugs?
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item good">Good coverage</li>
+                  <li class="list-group-item some">Some coverage</li>
+                  <li class="list-group-item broad">Has coverage, but unnecessarily broad</li>
+                  <li class="list-group-item bad">Bad option / no coverage</li>
+                  <li class="list-group-item note">See notes for details</li>
+                </ul>
+              </div>
+            </div>
+              
+          </div>
+
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
