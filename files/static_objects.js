@@ -6,7 +6,7 @@
  * @link https://github.com/HunterRatliff1/BugDrug
  * 
  * Created on    : 2023-12-31
- * Last modified : 2024-01-17
+ * Last modified : 2024-01-24
  * 
  * @license MIT
  * Copyright (c) 2023 Hunter Ratliff
@@ -408,11 +408,13 @@ const ANTIBIOTICS = {
             Tobramycin: {route: "IV"}
         },
         abxClass: 'other-abx',
-        comments: `Aminoglycosides are used to treat gram negative infections, including <i>Pseudomonas</i>. Gentamicin 
-        can have a synergistic effect for many gram positives (Staph aureus, Enterococcus) when used with other 
-        antibiotics (but shouldn't be used for gram positives alone).<br><br>
+        comments: `Aminoglycosides are used to treat gram negative infections, including <i>Pseudomonas</i>. 
+        Aminoglycosides has high rates of <b>nephrotoxicity & ototoxicity</b>, which limits their use in clinical 
+        practice<br><br>
         
-        Aminoglycosides has high rates of <b>nephrotoxicity & ototoxicity</b>, which limits their use in clinical practice
+        
+        Note: Gentamicin can have a synergistic effect for many gram positives (Staph aureus, Enterococcus) when used  
+        with other antibiotics (but shouldn't be used for gram positives alone).
         `
     },
     'AZM': {

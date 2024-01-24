@@ -34,10 +34,10 @@ text {
   /* For antibiotics */
   rect.good  {fill: #33a02c;opacity:0.8;}
   li.good    {background: rgb(51,160,44,0.8)}
-  rect.some  {fill: #33a02c;opacity:0.4;}
-  li.some    {background: rgb(51,160,44,0.4)}
-  rect.broad {fill: #ff7f00;opacity:0.4;}
-  li.broad   {background: rgb(255,127,0,0.4)}
+  rect.broad  {fill: #33a02c;opacity:0.4;}
+  li.broad    {background: rgb(51,160,44,0.4)}
+  rect.some {fill: #ff7f00;opacity:0.4;}
+  li.some   {background: rgb(255,127,0,0.4)}
 
   /* For syndromes */
   rect.com  {fill: #1f78b4;opacity:0.8;}
