@@ -345,7 +345,7 @@ const ANTIBIOTICS = {
         GI side effects. Finally, despite it's broad activity, it <b>lacks Pseudomonas coverage</b>.<br><br>
 
         <b>Eravacycline</b> is similar to tigecycline, but perhaps has fewer side effects. It's mainly used for 
-        intra-abdominal infections.`
+        intra-abdominal infections. It also has some activity for <i>Acinetobacter</i>`
     },
 
     /***  anaerobic-abx
@@ -499,40 +499,67 @@ const ANTIBIOTICS = {
      * Cefiderocol     
      *  
     ***/
+    'Zerbaxa': {
+        name: 'Zerbaxa &trade;',
+        fullName: '',
+        examples: {"Ceftolozane-Tazobactam": {route: "IV", trade:"Zerbaxa", abbv:"C/T"}},
+        abxClass: 'extended', // cephalosporins
+        comments: `Ceftolozane-Tazobactam is an antipseudomonal cephalosporin (ceftolozane) paired with tazobactam. The 
+        primary use of Zerbaxa is for <b>multidrug resistant Pseudomonas</b>. Unlike the other drugs in this section, 
+        it <span class="text-danger">lacks activity against CRE bugs</span>.<br><br>
+
+        My memory trick for this one is that is shares the same beta-lactamase inhibitor as Zosyn (<b>Tazobactam</b>), 
+        which is also used for Pseudomonas. However, unlike Zosyn (pip/tazo), the tazobactam in Zerbaxa doesn't give it  
+        good enough anaerobic coverage, so metronidazole is still needed if you're trying to cover for intra-abdominal 
+        infections.`
+    },
     'Vabomere': {
         name: 'Vabomere &trade;',
         fullName: '',
         examples: {"Meropenem-Vaborbactam": {route: "IV", trade:"Vabomere", abbv:"MEM/VAB"}},
         abxClass: 'extended', // carbapenems
-        comments: ``
+        comments: `Vabomere adds vaborbactam to meropenem, which restores activity for enterobacterales that produce 
+        <b>KPC carbapenemases</b>, and is the drug of choice for these CREs (Ambler class A). It does not help with
+        bugs producing MBLs (Ambler class B, e.g. NDM) or oxacillinases (Ambler class D, e.g. OXA), which means it 
+        doesn't expand the coverage of <span class="text-danger">meropenem resistant Pseudomonas</span> or Acinetobacter.`
     },
     'Recarbrio': {
         name: 'Recarbrio &trade;',
         fullName: '',
         examples: {"Imipenem-Cilastatin-Relebactam": {route: "IV", trade:"Recarbrio", abbv:"IPM/CLN/REL"}},
         abxClass: 'extended', // carbapenems
-        comments: ``
-    },
-    'Zerbaxa': {
-        name: 'Zerbaxa ',
-        fullName: '',
-        examples: {"Ceftolozane-Tazobactam": {route: "IV", trade:"Zerbaxa", abbv:"C/T"}},
-        abxClass: 'extended', // cephalosporins
-        comments: ``
+        comments: `Recarbrio "fixes" both of the "holes in coverage" of Zerbaxa & Vabomere, as it has activity against 
+        <b>both CRE and DTR Pseudomonas</b> (respectively). This makes it very similar to Avycaz (Ceftazidime-Avibactam), 
+        although unlike Avycaz, it doesn't have much activity against <span class="text-danger">OXA-48</span> (Ambler 
+        class D), but it does have anaerobic coverage.`
     },
     'Avycaz': {
         name: 'Avycaz &trade;',
         fullName: '',
         examples: {"Ceftazidime-Avibactam": {route: "IV", trade:"Avycaz", abbv:"CAZ/AVI"}},
         abxClass: 'extended', // cephalosporins
-        comments: ``
+        comments: `Ceftazidime adds the novel beta-lactamase avibactam to expand coverage to DTR Pseudomonas and CRE, 
+        <b>including OXA carbapenemases</b> (unlike Recarbrio / Imipenem-Cilastatin-Relebactam). However, similar to 
+        all of the other antibiotics in this section (aside from cefiderocol), it lacks activity against <span class="text-danger">
+        metallo-beta-lactmases</span> (Ambler class B, e.g. NDM).`
     },
     'Cefiderocol': {
         name: 'Cefiderocol',
         fullName: '',
         examples: {"Cefiderocol": {route: "IV", trade:"Fetroja", abbv:"FDC"}},
         abxClass: 'extended', // cephalosporins
-        comments: ``
+        comments: `Cefiderocol has broad gram negative activity, including steno, Acinetobacter, DTR PsA, and CRE 
+        (including common mechanisms of resistance such as <b>MBLs</b>, porin deletions, etc). However, it has a label 
+        warning for higher all-cause mortality versus other antibiotics in critically ill patients.<br><br>
+        
+        <small>
+        The mechanism of cefiderocol is highlighted by it's brand name, <b class="text-danger">Fe</b><b class="text-info">troja</b>. 
+        Cefiderocol behaves and looks structurally similar to bacterial siderophores (molecules that bacteria release to 
+        scavenge for/chelate free ferric iron); it chelates iron ions (<b class="text-danger">Fe<sup>3+</sup></b>) and uses 
+        the same bacterial iron transport systems to enter bacteria. Once inside the bacteria, it  dissociates from the 
+        ron and binds to PBPs (the so called "<b class="text-info">Troja</b>n Horse" strategy) to inhibit growth.</small>
+         
+        `
     },
     'Xacduro': {
         name: 'Xacduro &trade;',
