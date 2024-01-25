@@ -270,9 +270,9 @@ LZD,,,,,,,,,broad,good,good,broad,good,broad,,,,
 DAP,,,,,,,,,broad,good,good,broad,good,broad,,,,
 MEM,broad,good,good,good,bad,bad,some,some,broad,bad,,broad,,,good,,,
 ETP,broad,bad,good,good,bad,bad,bad,,good,bad,,good,,,good,,,
-DOX,some,,,,,some,some,,good,good,some,,,,,,good,good
+DOX,some,,,,,some,,,good,good,some,,,,,,good,good
 MIN,some,,,,,good,some,,good,good,some,,,,,,good,some
-TGC,broad,bad,good,good,good,some,some,,broad,broad,broad,broad,,,some,,broad,broad
+TGC,broad,bad,good,good,good,some,note,bad,broad,broad,broad,broad,,,some,,broad,broad
 MTZ,,,,,,,,,,,,,,,good,,,
 CLI,,,,,,,,,some,some,some,some,,,good,,,
 ATM,good,good,bad,bad,,note,,,,,,,,,,,,
@@ -283,11 +283,11 @@ TMPSMX,good,,good,some,,good,some,,good,good,good,,,,,note,,
 NIT,good,,,some,some,bad,,,,,,,good,good,,,,
 FOF,good,some,some,some,some,bad,,,,,,,some,some,,bad,,
 Xacduro,,,,,,,good,,,,,,,,,,,
-Vabomere,broad,good,good,good,good,bad,,bad,,,,,,,good,,,
-Recarbrio,broad,good,good,good,good,bad,,good,,,,,,,good,,,
-Zerbaxa,broad,broad,some,good,bad,bad,,good,,,,,,,,,,
-Avycaz,broad,good,good,good,good,note,,good,,,,,,,,,,
-Cefiderocol,broad,broad,broad,broad,good,some,some,good,,,,,,,,,,
+Vabomere,broad,good,good,good,good,bad,,bad,,,,,,,broad,,,
+Recarbrio,broad,good,good,good,good,bad,,good,,,,,,,broad,,,
+Zerbaxa,broad,broad,some,good,bad,bad,,good,,,,,,,bad,,,
+Avycaz,broad,good,good,good,good,note,,good,,,,,,,bad,,,
+Cefiderocol,broad,broad,broad,broad,good,good,good,good,,,,,,,,,,
 `;
 
 /*
