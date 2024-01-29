@@ -635,21 +635,17 @@ const BACTERIA = {
             <b class=text-danger>K</b><b class="text-info">lebsiella aerogenes</b>,
             <b class=text-danger>Ye</b>r<b class=text-danger>s</b>inia enterocolitica`,
         bugClass: 'GN',
-        comments: `There are a subset of bacteria that have <b>inducible</b> &#946;-lactamase production, meaning that 
-        when that bacteria is exposed to a beta-lactam antibiotic, it signals for the bacteria to produce the 
-        &#946;-lactamase (this is not to be confused with <i>constitutive</i> production of a &#946;-lactamase at 
-        baseline). This poses a challenge, as the report from the lab might say the culture is susceptible to 
-        ceftriaxone, but once you give the patient ceftriaxone the bacteria begins producing the AmpC &#946;-lactamase 
-        which inactivates ceftriaxone. The bacteria with inducible AmpC production have gone by many mnemonics over the 
-        years (ESCAPPM / SPACE / SPICE), but as of the 2022 IDSA guidelines (for treating AmpC &#946;-lactamase 
-        producing enterobacterales) the most worrisome bacteria in this class are <b><i>Enterobacter cloacae</b></i>, 
+        comments: `There are a subset of bacteria that have <b>inducible</b> &#946;-lactamase (&#946;L) production,  
+        meaning that when that bacteria is exposed to a beta-lactam antibiotic, it signals for the bacteria to produce 
+        the &#946;L (this is not to be confused with <i>constitutive</i> production of a &#946;L at baseline). 
+        The bacteria with inducible AmpC production have gone by many mnemonics over the years (ESCAPPM / SPACE / SPICE), 
+        but as of the 2022 IDSA guidelines, the most worrisome bacteria in this class are <b><i>Enterobacter cloacae</b></i>, 
         <b><i>Citrobacter freundii</b></i>, and <b><i>Klebsiella aerogenes</b></i>.<br><br>
 
         Treatment of invasive infections with these bacteria should either be with cefepime or a carbapenem, as these
-        agents do not heavily induce AmpC production and are more resistant to AmpC beta-lactamases. It's also worth 
-        noting that the "HECK Yes" list doesn't include bacteria that have non-inducible chromosomal AmpC production
-        (e.g. <i>Acinetobacter baumannii</i>), but in these cases the susceptibility report from the lab should say that
-        it's resistant to third generation cephalosporins.
+        agents do not heavily induce AmpC production and are more resistant to AmpC. Note: the "HECK Yes" list doesn't 
+        include bacteria that have non-inducible chromosomal AmpC production (e.g. <i>Acinetobacter 
+        baumannii</i>).
 
         <br><br>
         <table class="table table-sm">

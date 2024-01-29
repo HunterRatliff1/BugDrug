@@ -4,11 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Webpage icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="files/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="files/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="files/icon/favicon-16x16.png">
+
     <!-- Bootstrap 4.4.1 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css" >
 
-    <title>Antibiotics</title>
+    <title>Antibiotic guide</title>
   </head>
   <body>
     <!-- Download JS objects from JSON -->
@@ -19,7 +24,7 @@
 
 
 
-    <h1 class="text-center">Title goes here</h1>
+    <h1 class="text-center"></h1>
     
     
     <div class="container-xxl">
@@ -39,10 +44,12 @@
             Suggestions & questions
           </button>
           <br><br>
-          <p>Intended for adult ID in the US</p>
-          <p>Last updated: <mark>2024-01-24</mark>. For comments, suggestions, corrections, please see the 
-            <a data-toggle="modal" data-target="#contactModal" href="">Suggestions & questions</a> link above. 
-            Copyright Hunter Ratliff © 2023-2024. All rights reserved.</p>
+          <p>This tool aims to give a broad overview of antibiotics treat which bacteria, and which bacteria are 
+            commonly associated with various clinical syndromes. The antibiotics listed may vary by the location
+            of your practice (the current list is designed for the United States). For comments, suggestions, 
+            corrections, please see the <a data-toggle="modal" data-target="#contactModal" href="">Suggestions & questions</a> 
+            link above.</p>
+          <p>Last updated: <mark>2024-01-24</mark>. Copyright Hunter Ratliff © 2023-2024. All rights reserved.</p>
           <p id="upload-tag" class="text-danger"></p>
         </div>
       </div>
@@ -50,17 +57,85 @@
 
       <hr>
         <div class="row">
+            <!-- ABX column -->
+            <div class="col-sm-8 col-lg-4 order-1">
+              <h3 class="text-center">Antibiotcs</h3>
+              <div class="row g-1">
+                <div class="col">
+                  <div class="card my-2" id="penicillins">
+                      <div class="card-header"><b>Penicillins</b></div>
+                      <ul class="list-group list-group-flush"></ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card my-2" id="cephalosporins">
+                      <div class="card-header"><b>Cephalosporins</b></div>
+                      <ul class="list-group list-group-flush"></ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card my-2" id="other-abx">
+                      <div class="card-header"><b>Other ABX</b></div>
+                      <ul class="list-group list-group-flush"></ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card my-2" id="gram-positives">
+                      <div class="card-header"><b>Gram(+)</b></div>
+                      <ul class="list-group list-group-flush"></ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card my-2" id="carbapenems">
+                      <div class="card-header"><b>Carbapenems</b></div>
+                      <ul class="list-group list-group-flush"></ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card my-2" id="tetracyclines">
+                      <div class="card-header"><b>Tetracyclines</b></div>
+                      <ul class="list-group list-group-flush"></ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card my-2" id="anaerobic-abx">
+                      <div class="card-header"><b>Anaerobic's</b></div>
+                      <ul class="list-group list-group-flush"></ul>
+                  </div>
+                </div>
+                
+                <div class="col">
+                  <div class="card my-2" id="UTI-abx">
+                      <div class="card-header"><b>UTI ABX</b></div>
+                      <ul class="list-group list-group-flush"></ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card my-2" id="extended">
+                      <div class="card-header"><b>Extended spectrum</b></div>
+                      <ul class="list-group list-group-flush"></ul>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="d-none d-lg-block">
+                <!-- extra padding to prevent issues with scrolling 
+                     but is only displayed on large (or above) screens -->
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+              </div>
+            </div>
             <!-- Syndromes column -->
-            <div class="col-sm-4 col-lg-2 order-2 order-lg-1">
+            <div class="col-sm-4 col-lg-2 order-2 order-lg-3">
                 <h3 class="text-center">Syndrome</h3>
                 <ul id="list-syndrome" class="list-group list-group-flush"></ul>
                 <br><br>
                 
-                <!-- extra padding to prevent issues with scrolling -->
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <!-- extra padding to prevent issues with scrolling 
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
             </div>
             <!-- Bug box & comments box -->
-            <div class="col-lg-6 order-1 order-lg-2">
+            <div class="col-lg-6 order-3 order-lg-2">
                 <h3 class="text-center">Bacteria</h3>
                 <svg width="100%"  id="bug-table" viewBox="0 0 730 360">
 
@@ -144,70 +219,7 @@
                 </div>
                 <br>
             </div>
-            <!-- ABX column -->
-            <div class="col-sm-8 col-lg-4 order-3">
-              <h3 class="text-center">Antibiotcs</h3>
-              <div class="row g-1">
-                <div class="col">
-                  <div class="card my-2" id="penicillins">
-                      <div class="card-header"><b>Penicillins</b></div>
-                      <ul class="list-group list-group-flush"></ul>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card my-2" id="cephalosporins">
-                      <div class="card-header"><b>Cephalosporins</b></div>
-                      <ul class="list-group list-group-flush"></ul>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card my-2" id="other-abx">
-                      <div class="card-header"><b>Other ABX</b></div>
-                      <ul class="list-group list-group-flush"></ul>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card my-2" id="gram-positives">
-                      <div class="card-header"><b>Gram(+)</b></div>
-                      <ul class="list-group list-group-flush"></ul>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card my-2" id="carbapenems">
-                      <div class="card-header"><b>Carbapenems</b></div>
-                      <ul class="list-group list-group-flush"></ul>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card my-2" id="tetracyclines">
-                      <div class="card-header"><b>Tetracyclines</b></div>
-                      <ul class="list-group list-group-flush"></ul>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card my-2" id="anaerobic-abx">
-                      <div class="card-header"><b>Anaerobic's</b></div>
-                      <ul class="list-group list-group-flush"></ul>
-                  </div>
-                </div>
-                
-                <div class="col">
-                  <div class="card my-2" id="UTI-abx">
-                      <div class="card-header"><b>UTI ABX</b></div>
-                      <ul class="list-group list-group-flush"></ul>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card my-2" id="extended">
-                      <div class="card-header"><b>Extended spectrum</b></div>
-                      <ul class="list-group list-group-flush"></ul>
-                  </div>
-                </div>
-                <!-- extra padding to prevent issues with scrolling -->
-                <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br>
-              </div>
-            </div>
+
           </div>
     </div>
 
@@ -230,6 +242,11 @@
               or completeness of the information.</p>
           <p>Please consult appropriate reference material or your local ID pharmacist/physician for clinical decision 
             making (they are probably smarter than me anyways!). Please reach out for any corrections or suggestions.</p>
+          <p><b>Patient population:</b> Unless stated otherwise, this assumes the patient is an <mark>adult</mark> who 
+            is generally <mark>immunocompetent</mark> (e.g. not transplant or on immunosuppressants). It also assumes 
+            they are <mark>not pregnant</mark> or breastfeeding.</p>
+          <!-- Add warning that says this works better on larger screens (only display if smaller than lg)-->
+          <p class="text-info d-lg-none">Note: This tool works best on desktop browsers</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">I agree</button>
@@ -273,7 +290,7 @@
           </button>
         </div>
         <div class="modal-body">
-          These are general
+          
           <div class="row">
             <div class="col">
               <div class="card my-2">
