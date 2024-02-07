@@ -6,7 +6,7 @@
  * @link https://github.com/HunterRatliff1/BugDrug
  * 
  * Created on    : 2023-12-31
- * Last modified : 2024-01-24
+ * Last modified : 2024-02-07
  * 
  * @license MIT
  * Copyright (c) 2023 Hunter Ratliff
@@ -868,7 +868,7 @@ const BACTERIA = {
         comments: `Atypical pneumonias are called "atypical" because they do not grow well with traditional methods. 
         This is in part because most of these bacteria lack cell walls. <i>C pneumoniae</i> often develops in younger 
         children, whereas <i>C psittaci</i> is more associated with pet birds. <i>Mycoplasma</i> is the classic "walking 
-        pneumonia and is generally less severe than <i>Legionella</i>.`
+        pneumonia" and is generally less severe than <i>Legionella</i>.`
     },
     'Zoo': {
         name: 'Zoonotic & tick-borne bacteria',
@@ -877,7 +877,7 @@ const BACTERIA = {
         bugClass: 'atyp',
         comments: `This is such a broad category and it's beyond the scope of this page to talk about all of the 
         zoonotic & tick-borne pathogens (and their treatments). The important takeaway for learners is that 
-        tetracyclines, in particular <mar><b>doxycycline</b></mark> has activity against many of these bugs.`
+        tetracyclines, in particular <mark><b>doxycycline</b></mark> has activity against many of these bugs.`
     }
 };
 
